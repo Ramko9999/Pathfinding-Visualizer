@@ -2,11 +2,11 @@ public class Node {
     LocNode element; //this is a location node
     Node next;
     Node previous;
-    double gCost;
-    double hCost;
-    double cost;
+    double gCost; //cost calculated from the starting point
+    double hCost; //cost calculated from end point
+    double cost; //total cost
 
-    void calculateCost(int sRow, int sCol, int eRow, int eCol){
+    void calculateCost(int eRow, int eCol){
         int row = element.row;
         int col= element.col;
 
@@ -15,13 +15,13 @@ public class Node {
 
     }
 
-    Node(LocNode element, int sRow, int sCol, int eRow, int eCol, double gCost) {
+    Node(LocNode element, int eRow, int eCol, double gCost) {
         this.element = element;
         this.next = null;
         this.previous = null;
         this.gCost = gCost;
         System.out.println("GCost : " + gCost);
-        calculateCost(sRow, sCol, eRow, eCol);
+        calculateCost(eRow, eCol);
         //compute the cost
     }
 }
