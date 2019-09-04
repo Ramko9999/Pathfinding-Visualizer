@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class PathFinder {
 
@@ -19,8 +20,12 @@ public class PathFinder {
     }
 
     public static void main(String[] args) {
-        PathFinder pathFinder =  new PathFinder(new int[12][12], 1, 6, 9, 10);
+        PathFinder pathFinder =  new PathFinder(new int[12][12], 1, 1, 9, 10);
         pathFinder.A_Star_Search();
+        System.out.println("Trying DFS");
+        System.out.println("------------------------");
+        pathFinder.DFS();
+
     }
 
     public int[][] copyArray(int [][] array){
@@ -39,6 +44,7 @@ public class PathFinder {
 
     public void placeWalls(int [][] board){
 
+
         board[4][6] = -1;
         board[0][6] = -1;
         board[1][6] = -1;
@@ -49,17 +55,10 @@ public class PathFinder {
         board[7][6] = -1;
         board[8][6] = -1;
 
-        board[10][6] = -1;
-        board[11][6] = -1;
-        board[3][10] = -1;
-        board[4][10] = -1;
-        board[5][10] = -1;
-        board[6][10] = -1;
-        board[7][10] = -1;
-        board[8][10] = -1;
-        board[9][10] = -1;
-        board[9][11] = -1;
-        board[3][11] = -1;
+
+
+
+
     }
 
     public static void displayArray(int[][] a) {
@@ -104,7 +103,7 @@ public class PathFinder {
             displayArray(board);
 
             //gets a list of possible places we can move from our current position
-            ArrayList<Node> possibleNodes = generateNewNodes(fcostHeader, startRow, startCol, endRow, endCol, board);
+            ArrayList<Node> possibleNodes = generateNewNodesForAStar(fcostHeader,  endRow, endCol, board);
 
 
             fCostList.head = fCostList.head.next; //pop out the node
@@ -129,7 +128,7 @@ public class PathFinder {
             System.out.println("Path cannot be found");
         }
         else{
-            System.out.println("Shortest Path is as follows: ");
+            System.out.println("A* predicts the best path is as follows: ");
             //if we reached here, we found the end, and we are going to retrace our steps
             while(fcostHeader.element != null){
                 System.out.println(fcostHeader.element.row + " , " + fcostHeader.element.col);
@@ -139,7 +138,108 @@ public class PathFinder {
 
     }
 
-    public ArrayList<Node> generateNewNodes(Node previousNode, int sRow, int sCol, int eRow, int eCol, int [][] board){
+    //gives the path using Depth First Search
+
+    public void DFS(){
+
+        int [][] board = copyArray(this.board);
+        placeWalls(board);
+        board[startRow][startCol] = 10;
+        board[endRow][endCol] = 20;
+        Stack nodeStack = new Stack();
+        LocNode startingLocation = new LocNode(startRow, startCol);
+        nodeStack.push(startingLocation);
+        boolean isNodeStackEmpty = false;
+        //until our locNode stack gives us the location
+        while(!(((LocNode)nodeStack.peek()).row ==  endRow && ((LocNode)nodeStack.peek()).col ==  endCol) && !isNodeStackEmpty){
+            LocNode previousLocationNode = (LocNode) nodeStack.peek();
+            ArrayList<LocNode> locations = generateNewNodesForDFS(previousLocationNode,  board);
+            nodeStack.pop();
+            LocNode targetNode = null;
+            for(LocNode locationNode: locations){
+
+                if(!nodeStack.empty() && (((LocNode)nodeStack.peek()).row ==  endRow && ((LocNode)nodeStack.peek()).col ==  endCol)){
+                    targetNode = (LocNode)nodeStack.peek();
+                }
+                else{
+                    nodeStack.push(locationNode);
+                }
+
+            }
+            //if the final destination is in the loc node list, then it needs to be at the end
+            if(targetNode!= null){
+                nodeStack.push(targetNode);
+            }
+            if(nodeStack.empty()){
+                isNodeStackEmpty = true;
+            }
+        }
+
+        if(isNodeStackEmpty){
+            System.out.println("Path can't be found with DFS");
+        }
+        else{
+            LocNode current = (LocNode) nodeStack.peek();
+            System.out.println("DFS Predicts the best path is as follows: ");
+            while( current != null){
+                System.out.println(current.row + " , " + current.col);
+                current = current.previous;
+            }
+        }
+
+
+    }
+
+    public ArrayList<LocNode> generateNewNodesForDFS(LocNode previousLocation,  int [][] board){
+        int row = previousLocation.row;
+        int col = previousLocation.col;
+        int [] rowAdditions = {-1,0,1}; //this will gives 8 possible moves around the array
+        int [] colAdditions = {-1,0,1};
+        ArrayList<Dimension> moveGenerator = new ArrayList<>();
+        for(int rowAddition: rowAdditions){
+            for(int colAddition: colAdditions){
+                if(!(rowAddition == 0 && colAddition == 0)){
+                    moveGenerator.add(new Dimension(row + rowAddition, col + colAddition));
+                }
+
+            }
+        }
+        ArrayList<LocNode> validLocationGenerator = new ArrayList<>();
+        for (int i = 0; i < moveGenerator.size(); i++){
+
+            //check whether these moves are all valid
+            boolean isNodeValid = true;
+            int moveRow = moveGenerator.get(i).row;
+            int moveCol = moveGenerator.get(i).col;
+
+            if(moveRow < 0 || moveRow >= board.length){
+                isNodeValid = false;
+            }
+            if(moveCol < 0 || moveCol >= board[0].length){
+                isNodeValid = false;
+            }
+
+
+            if(isNodeValid){
+
+                if(!(board[moveRow][moveCol] == 10 || board[moveRow][moveCol] <0 )) {
+                    LocNode l = new LocNode(moveRow, moveCol);
+                    l.previous = previousLocation; //attach the previousNode's location in our "move history"
+                    board[moveRow][moveCol] = -5;
+                    //find gCost and generate new node
+
+                    validLocationGenerator.add(l);
+                }
+
+            }
+        }
+        return validLocationGenerator;
+    }
+
+
+
+
+    public ArrayList<Node> generateNewNodesForAStar(Node previousNode, int eRow, int eCol, int [][] board){
         LocNode location = previousNode.element;
         int row = location.row;
         int col = location.col;
@@ -268,6 +368,8 @@ class MinList {
     }
 
 }
+
+
 
 
 
