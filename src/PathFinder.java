@@ -20,7 +20,7 @@ public class PathFinder {
     }
 
     public static void main(String[] args) {
-        PathFinder pathFinder =  new PathFinder(new int[25][25], 1, 1, 16, 23);
+        PathFinder pathFinder =  new PathFinder(new int[12][12], 1, 1, 9, 10);
         pathFinder.A_Star_Search();
         System.out.println("Trying DFS");
         System.out.println("------------------------");
@@ -48,10 +48,10 @@ public class PathFinder {
         board[4][6] = -1;
         board[0][6] = -1;
         board[1][6] = -1;
-        board[2][13] = -1;
-        board[7][6] = -1;
-        board[9][16] = -1;
-        board[16][16] = -1;
+        board[2][6] = -1;
+        board[3][6] = -1;
+        board[5][6] = -1;
+        board[6][6] = -1;
         board[7][6] = -1;
         board[8][6] = -1;
 
@@ -129,6 +129,7 @@ public class PathFinder {
         }
         else{
             int counter = 1;
+
             System.out.println("A* predicts the best path is as follows: ");
             //if we reached here, we found the end, and we are going to retrace our steps
             while(fcostHeader.element != null){
