@@ -20,7 +20,7 @@ public class PathFinder {
     }
 
     public static void main(String[] args) {
-        PathFinder pathFinder =  new PathFinder(new int[12][12], 1, 1, 9, 10);
+        PathFinder pathFinder =  new PathFinder(new int[25][25], 1, 1, 16, 23);
         pathFinder.A_Star_Search();
         System.out.println("Trying DFS");
         System.out.println("------------------------");
@@ -48,10 +48,10 @@ public class PathFinder {
         board[4][6] = -1;
         board[0][6] = -1;
         board[1][6] = -1;
-        board[2][6] = -1;
-        board[3][6] = -1;
-        board[5][6] = -1;
-        board[6][6] = -1;
+        board[2][13] = -1;
+        board[7][6] = -1;
+        board[9][16] = -1;
+        board[16][16] = -1;
         board[7][6] = -1;
         board[8][6] = -1;
 
@@ -90,7 +90,7 @@ public class PathFinder {
         displayArray(board);
         MinList fCostList = new MinList();
         //we will append the starting node to as our first node
-        fCostList.append(new Node(new LocNode(startRow, startCol), endRow, endCol, 0)); //append the first node or starting point to our list
+        fCostList.append(new Node(new LocNode(startRow, startCol, 0), endRow, endCol, 0)); //append the first node or starting point to our list
 
 
 
@@ -100,7 +100,7 @@ public class PathFinder {
         //condition checks whether we reached end point
         while(!(fcostHeader.element.row == endRow && fcostHeader.element.col == endCol) && canBeFound){
 
-            displayArray(board);
+            //displayArray(board);
 
             //gets a list of possible places we can move from our current position
             ArrayList<Node> possibleNodes = generateNewNodesForAStar(fcostHeader,  endRow, endCol, board);
@@ -128,12 +128,18 @@ public class PathFinder {
             System.out.println("Path cannot be found");
         }
         else{
+            int counter = 1;
             System.out.println("A* predicts the best path is as follows: ");
             //if we reached here, we found the end, and we are going to retrace our steps
             while(fcostHeader.element != null){
+
                 System.out.println(fcostHeader.element.row + " , " + fcostHeader.element.col);
+                board[fcostHeader.element.row][fcostHeader.element.col] = 4;
+                counter++;
                 fcostHeader.element = fcostHeader.element.previous;
             }
+            displayArray(board);
+            System.out.println("# of Moves : "   + counter);
         }
 
     }
@@ -147,11 +153,14 @@ public class PathFinder {
         board[startRow][startCol] = 10;
         board[endRow][endCol] = 20;
         Stack nodeStack = new Stack();
-        LocNode startingLocation = new LocNode(startRow, startCol);
+        LocNode startingLocation = new LocNode(startRow, startCol, 0);
         nodeStack.push(startingLocation);
         boolean isNodeStackEmpty = false;
         //until our locNode stack gives us the location
-        while(!(((LocNode)nodeStack.peek()).row ==  endRow && ((LocNode)nodeStack.peek()).col ==  endCol) && !isNodeStackEmpty){
+        while(!(((LocNode)nodeStack.peek()).row ==  endRow && ((LocNode)nodeStack.peek()).col ==  endCol) &&  !isNodeStackEmpty){
+            //displayArray(board);
+
+
             LocNode previousLocationNode = (LocNode) nodeStack.peek();
             ArrayList<LocNode> locations = generateNewNodesForDFS(previousLocationNode,  board);
             nodeStack.pop();
@@ -159,6 +168,8 @@ public class PathFinder {
             for(LocNode locationNode: locations){
 
                 if(!nodeStack.empty() && (((LocNode)nodeStack.peek()).row ==  endRow && ((LocNode)nodeStack.peek()).col ==  endCol)){
+
+                    System.out.println("TargetNode found");
                     targetNode = (LocNode)nodeStack.peek();
                 }
                 else{
@@ -180,11 +191,16 @@ public class PathFinder {
         }
         else{
             LocNode current = (LocNode) nodeStack.peek();
+            int counter = 0;
             System.out.println("DFS Predicts the best path is as follows: ");
             while( current != null){
                 System.out.println(current.row + " , " + current.col);
+                board[current.row][current.col] = 4;
+                counter++;
                 current = current.previous;
             }
+            displayArray(board);
+            System.out.println("# of Moves : "   + counter);
         }
 
 
@@ -223,7 +239,7 @@ public class PathFinder {
             if(isNodeValid){
 
                 if(!(board[moveRow][moveCol] == 10 || board[moveRow][moveCol] <0 )) {
-                    LocNode l = new LocNode(moveRow, moveCol);
+                    LocNode l = new LocNode(moveRow, moveCol, previousLocation.size + 1);
                     l.previous = previousLocation; //attach the previousNode's location in our "move history"
                     board[moveRow][moveCol] = -5;
                     //find gCost and generate new node
@@ -275,7 +291,7 @@ public class PathFinder {
             if(isNodeValid){
 
                 if(!(board[moveRow][moveCol] == 10 || board[moveRow][moveCol] <0 )) {
-                    LocNode l = new LocNode(moveRow, moveCol);
+                    LocNode l = new LocNode(moveRow, moveCol, previousNode.element.size);
                     l.previous = previousNode.element; //attach the previousNode's location in our "move history"
                     board[moveRow][moveCol] = -5;
                     //find gCost and generate new node
@@ -406,11 +422,13 @@ class Node {
 class LocNode{
     int row;
     int col;
+    int size;
     LocNode previous; //this will used to retrace our steps
 
-    public LocNode(int r, int c){
+    public LocNode(int r, int c, int size){
         row = r;
         col = c;
+        size = size;
     }
 }
 
