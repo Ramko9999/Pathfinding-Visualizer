@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f25f589c-c3e1-4e80-a907-45f46e7d2334" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Dimension.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/Dimension.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/LocNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/LocNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/MinList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/MinList.class" afterDir="false" />
@@ -24,22 +25,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PathFinder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4760">
-              <caret line="331" column="32" lean-forward="true" selection-start-line="331" selection-start-column="32" selection-end-line="331" selection-end-column="32" />
+            <state relative-caret-position="204">
+              <caret line="35" column="69" selection-start-line="35" selection-start-column="69" selection-end-line="35" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#10127#10128#0" expanded="true" />
-                <element signature="e#10155#10156#0" expanded="true" />
+                <element signature="e#15326#15327#0" expanded="true" />
+                <element signature="e#15373#15374#0" expanded="true" />
+                <element signature="class#Dimension#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/Stack.java">
+        <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/LinkedList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="101" column="18" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
+            <state relative-caret-position="77">
+              <caret line="258" column="28" selection-start-line="258" selection-start-column="28" selection-end-line="258" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -74,7 +76,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-4" />
+    <option name="x" value="-5" />
     <option name="width" value="1935" />
     <option name="height" value="1040" />
   </component>
@@ -84,7 +86,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -102,6 +103,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -167,13 +169,21 @@
       <option name="project" value="LOCAL" />
       <updated>1567561272035</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Depth First Search">
+      <created>1567569425596</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1567569425596</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="0" width="1548" height="832" extended-state="0" />
+    <frame x="-4" y="0" width="1548" height="832" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2533602" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25554106" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -182,15 +192,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932796" visible="true" weight="0.042857144" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932796" visible="true" weight="0.43568465" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.31857142" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50067204" side_tool="true" weight="0.042857144" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.39857143" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32918397" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -206,40 +216,36 @@
     <option name="LAST_COMMIT_MESSAGE" value="Depth First Search" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Node.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MinList.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Runnner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LocNode.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Node.java" />
+    <entry file="file://$PROJECT_DIR$/src/MinList.java" />
+    <entry file="file://$PROJECT_DIR$/src/Runnner.java" />
+    <entry file="file://$PROJECT_DIR$/src/LocNode.java" />
     <entry file="file://$PROJECT_DIR$/A-Star Search.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/Stack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
+        <state relative-caret-position="611">
           <caret line="101" column="18" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/LinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="258" column="28" selection-start-line="258" selection-start-column="28" selection-end-line="258" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PathFinder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4760">
-          <caret line="331" column="32" lean-forward="true" selection-start-line="331" selection-start-column="32" selection-end-line="331" selection-end-column="32" />
+        <state relative-caret-position="204">
+          <caret line="35" column="69" selection-start-line="35" selection-start-column="69" selection-end-line="35" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#10127#10128#0" expanded="true" />
-            <element signature="e#10155#10156#0" expanded="true" />
+            <element signature="e#15326#15327#0" expanded="true" />
+            <element signature="e#15373#15374#0" expanded="true" />
+            <element signature="class#Dimension#0" />
           </folding>
         </state>
       </provider>
