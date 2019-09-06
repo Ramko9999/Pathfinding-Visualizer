@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f25f589c-c3e1-4e80-a907-45f46e7d2334" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Visualizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/A-Star Search/ColorChanger.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/A-Star Search/Controller.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/A-Star Search/TileButton$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/A-Star Search/TileButton.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PathFinder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Dimension.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/Dimension.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/LocNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/LocNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/MinList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/MinList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/PathFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/PathFinder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PathFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PathFinder.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,14 +26,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PathFinder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2392">
-              <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+            <state relative-caret-position="1275">
+              <caret line="78" selection-start-line="78" selection-end-line="78" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#DFS#0;class#PathFinder#0" />
                 <element signature="method#generateNewNodesForTreeSearch#0;class#PathFinder#0" />
-                <element signature="e#15326#15327#0" expanded="true" />
-                <element signature="e#15373#15374#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -45,10 +41,9 @@
         <entry file="file://$PROJECT_DIR$/src/Visualizer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="59" column="103" selection-start-line="59" selection-start-column="103" selection-end-line="59" selection-end-column="103" />
+              <caret line="38" column="36" lean-forward="true" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3940#3941#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,7 +52,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.desktop/java/awt/Font.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
+            <state relative-caret-position="8483">
               <caret line="571" column="11" selection-start-line="571" selection-start-column="11" selection-end-line="571" selection-end-column="11" />
             </state>
           </provider>
@@ -66,12 +61,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="170">
               <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#728#729#0" expanded="true" />
-                <element signature="e#753#754#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -120,6 +113,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -131,7 +125,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -219,13 +212,21 @@
       <option name="project" value="LOCAL" />
       <updated>1567656691725</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Visualizer Mostly Done, Small A* Star Bug: Queue">
+      <created>1567745219589</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1567745219589</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="0" width="1548" height="832" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25554106" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2548892" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -234,7 +235,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932796" weight="0.40940526" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932796" visible="true" weight="0.051175658" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -256,16 +257,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Depth First Search" />
     <MESSAGE value="Breadth First Search Working! DFS is not ideal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Breadth First Search Working! DFS is not ideal" />
+    <MESSAGE value="Visualizer Mostly Done, Small A* Star Bug: Queue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Visualizer Mostly Done, Small A* Star Bug: Queue" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Node.java" />
     <entry file="file://$PROJECT_DIR$/src/MinList.java" />
     <entry file="file://$PROJECT_DIR$/src/Runnner.java" />
     <entry file="file://$PROJECT_DIR$/src/LocNode.java" />
-    <entry file="file://$PROJECT_DIR$/A-Star Search.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/Stack.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="611">
@@ -280,46 +279,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/PathFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#DFS#0;class#PathFinder#0" />
+            <element signature="method#generateNewNodesForTreeSearch#0;class#PathFinder#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.desktop/java/awt/Font.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
+        <state relative-caret-position="8483">
           <caret line="571" column="11" selection-start-line="571" selection-start-column="11" selection-end-line="571" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="170">
           <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#728#729#0" expanded="true" />
-            <element signature="e#753#754#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PathFinder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2392">
-          <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#DFS#0;class#PathFinder#0" />
-            <element signature="method#generateNewNodesForTreeSearch#0;class#PathFinder#0" />
-            <element signature="e#15326#15327#0" expanded="true" />
-            <element signature="e#15373#15374#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/A-Star Search.iml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Visualizer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="59" column="103" selection-start-line="59" selection-start-column="103" selection-end-line="59" selection-end-column="103" />
+          <caret line="38" column="36" lean-forward="true" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3940#3941#0" expanded="true" />
           </folding>
         </state>
       </provider>

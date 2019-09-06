@@ -19,12 +19,12 @@ public class Visualizer extends JFrame {
 
     public Visualizer(){
         super("Visualizer");
-        this.setVisible(true);
         this.setSize(790,820);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         initGrid();
         initUI();
         initPoints();
+        this.setVisible(true);
 
     }
 
@@ -57,7 +57,7 @@ public class Visualizer extends JFrame {
                 new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        Controller c = new Controller(copyArray(repArray), sRow, sCol, eRow, eCol, "BFS");
+                        Controller c = new Controller(copyArray(repArray), sRow, sCol, eRow, eCol, "A*");
                         LocNode finalNode = c.getPath();
                         ColorChanger colorChanger = new ColorChanger(c.requestHistory(), finalNode, gridArray, c.requestCalculations());
                         colorChanger.start();
