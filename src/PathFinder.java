@@ -17,10 +17,14 @@ import java.util.Stack;
 public class PathFinder {
 
     int [][] board;
+
     int startRow;
     int startCol;
     int endRow;
     int endCol;
+    LinkedList<int[][]> history;
+    LinkedList<int [][]> calculationTimeLapse;
+    int [][] calculationMoment;
 
 
     public PathFinder(int [][] board, int sRow, int sCol, int eRow, int eCol){
@@ -29,12 +33,14 @@ public class PathFinder {
         startCol = sCol;
         endRow = eRow;
         endCol = eCol;
+        calculationMoment = new int[this.board.length][this.board[0].length];
 
     }
 
     public static void main(String[] args) {
         PathFinder pathFinder =  new PathFinder(new int[12][12], 7, 0, 9, 10);
         pathFinder.A_Star_Search();
+        System.out.println("----------------");
         pathFinder.BFS();
 
     }
@@ -45,31 +51,6 @@ public class PathFinder {
             newArray[i] = array[i].clone();
         }
         return newArray;
-    }
-
-    public void placeWalls(int [][] board){
-
-
-        board[4][6] = -1;
-        board[0][6] = -1;
-        board[1][6] = -1;
-        board[2][6] = -1;
-        board[3][6] = -1;
-        board[5][6] = -1;
-        board[6][6] = -1;
-        board[7][6] = -1;
-
-
-        board[9][2] = -1;
-        board[8][2] = -1;
-        board[6][2] = -1;
-        board[7][2] = -1;
-
-        board[5][2] = -1;
-
-
-
-
     }
 
     public static void displayArray(int[][] a) {
@@ -89,14 +70,12 @@ public class PathFinder {
     }
 
     //gives the path using A* search WORKING!
-    public void A_Star_Search(){
-
+    public LocNode A_Star_Search(){
+        history = new LinkedList<>();
+        calculationTimeLapse = new LinkedList<>();
         int [][] board = copyArray(this.board);
-        placeWalls(board);
         board[startRow][startCol] = 10;
         board[endRow][endCol] = 20;
-
-
 
         displayArray(board);
         MinList fCostList = new MinList();
@@ -110,10 +89,11 @@ public class PathFinder {
 
         //condition checks whether we reached end point
         while(!(fcostHeader.element.row == endRow && fcostHeader.element.col == endCol) && canBeFound){
-
-            //displayArray(board);
+            history.addFirst(copyArray(board));
+            calculationTimeLapse.addFirst(copyArray(calculationMoment));
             //gets a list of possible places we can move from our current position
             ArrayList<Node> possibleNodes = generateNewNodesForAStar(fcostHeader,  endRow, endCol, board);
+            System.out.println(possibleNodes.size());
             fCostList.head = fCostList.head.next; //pop out the node
             for(Node n : possibleNodes){
                 fCostList.append(n); //appends the places in an order maintained way
@@ -121,7 +101,7 @@ public class PathFinder {
             }
             fcostHeader = fCostList.head; //keep going
             fCostList._size--;
-            if(fCostList._size == 1){
+            if(fCostList._size == 0){
                 canBeFound = false;
             }
 
@@ -129,23 +109,13 @@ public class PathFinder {
         }
 
         if(!canBeFound){
-            System.out.println("A* says path cannot be found");
+            return null;
         }
         else{
-            int counter = 0;
-
-            System.out.println("A* predicts the best path is as follows: ");
             //if we reached here, we found the end, and we are going to retrace our steps
-            while(fcostHeader.element != null){
-
-                System.out.println(fcostHeader.element.row + " , " + fcostHeader.element.col);
-                board[fcostHeader.element.row][fcostHeader.element.col] = 4;
-                counter++;
-                fcostHeader.element = fcostHeader.element.previous;
-            }
-            displayArray(board);
-            System.out.println("# of Moves : "   + counter);
+           return fcostHeader.element;
         }
+
 
     }
 
@@ -158,7 +128,7 @@ public class PathFinder {
         ArrayList<Dimension> moveGenerator = new ArrayList<>();
         for(int rowAddition: rowAdditions){
             for(int colAddition: colAdditions){
-                if(!(rowAddition == 0 && colAddition == 0)){
+                if(!(rowAddition == 0 && colAddition == 0) && !(rowAddition == colAddition) && !(rowAddition + colAddition == 0)){
                     moveGenerator.add(new Dimension(row + rowAddition, col + colAddition));
                 }
 
@@ -191,8 +161,9 @@ public class PathFinder {
                     board[moveRow][moveCol] = 1; //identify that we are looking at the nodes
 
                     //find gCost and generate new node
-                    double gCost = previousNode.gCost + 10 * Math.sqrt(Math.pow(moveRow - row, 2) + Math.pow(moveCol - col, 2));
+                    double gCost = previousNode.gCost + 1 * Math.sqrt(Math.pow(moveRow - row, 2) + Math.pow(moveCol - col, 2));
                     Node newNode = new Node(l, eRow, eCol, gCost);
+                    calculationMoment[moveRow][moveCol] = (int) newNode.cost;
                     validNodeGenerator.add(newNode);
                 }
 
@@ -207,7 +178,6 @@ public class PathFinder {
     public void DFS(){
 
         int [][] board = copyArray(this.board);
-        placeWalls(board);
         board[startRow][startCol] = 10;
         board[endRow][endCol] = 20;
         Stack<LocNode> nodeStack = new Stack();
@@ -280,18 +250,17 @@ public class PathFinder {
     }
 
     //gives the path using Breadth First Search WORKING!
-    public void BFS(){
+
+    public LocNode BFS(){
+        history = new LinkedList<>();
         int [][] board = copyArray(this.board);
-        placeWalls(board);
         board[startRow][startCol] = 10;
         board[endRow][endCol] = 20;
         LinkedList <LocNode> nodeQueue = new LinkedList<>();
         nodeQueue.addFirst(new LocNode(startRow, startCol, 0));
 
         while(!(nodeQueue.getLast().row == endRow && nodeQueue.getLast().col == endCol)){
-            //displayArray(board);
-            //System.out.println("--------------------");
-            //System.out.println(nodeQueue);
+            history.addFirst(copyArray(board));
             LocNode endNode = nodeQueue.getLast();
             ArrayList<LocNode> possibleLocNodes = generateNewNodesForTreeSearch(endNode, board, "BFS");
             //dequeue the final node as we have searched possible nodes from it
@@ -307,19 +276,13 @@ public class PathFinder {
 
         if(nodeQueue.isEmpty()){
             System.out.println("BFS couldn't find a path");
+            return null;
         }
         else{
             LocNode endNode = nodeQueue.getLast();
-            System.out.println("BFS predicts the path is: ");
-            int counter = 0;
-            while(endNode != null){
-                System.out.println(endNode.row + " , " + endNode.col);
-                board[endNode.row][endNode.col] = 4;
-                endNode = endNode.previous;
-                counter++;
-            }
-            displayArray(board);
-            System.out.println("# of Moves: " + counter);
+
+           return endNode;
+
         }
 
     }
@@ -339,7 +302,7 @@ public class PathFinder {
         ArrayList<Dimension> moveGenerator = new ArrayList<>();
         for(int rowAddition: rowAdditions){
             for(int colAddition: colAdditions){
-                if(!(rowAddition == 0 && colAddition == 0)){
+                if(!(rowAddition == 0 && colAddition == 0) && !(rowAddition == colAddition) && !(rowAddition + colAddition == 0)){
                     moveGenerator.add(new Dimension(row + rowAddition, col + colAddition));
                 }
 
@@ -363,12 +326,18 @@ public class PathFinder {
 
             if(isNodeValid){
 
-                if(!(board[moveRow][moveCol] == 10 || board[moveRow][moveCol] <0 )) {
+                if(!(board[moveRow][moveCol] == 10 || board[moveRow][moveCol] <0)) {
                     //dont append things that are already in the queue, as it is a waste of time and space
                     if(!(dontConsiderOnes && board[moveRow][moveCol] == 1)){
                         LocNode l = new LocNode(moveRow, moveCol, previousLocation.size + 1);
                         l.previous = previousLocation; //attach the previousNode's location in our "move history"
-                        board[row][col] = -5;
+                        if(row ==startRow && col == startCol){ //to indicate the start node
+                            board[row][col] = -6;
+                        }
+                        else{
+                            board[row][col] = -5;
+                        }
+
                         board[moveRow][moveCol] = 1; //the node is being examined
                         validLocationGenerator.add(l);
                     }
@@ -381,7 +350,6 @@ public class PathFinder {
     }
 
 }
-
 
 //used as a way to preserve order in A* search
 class MinList {
@@ -472,7 +440,7 @@ class Node {
         int row = element.row;
         int col= element.col;
 
-        hCost = 10 * Math.sqrt(Math.pow((double)(row - eRow), 2.0) + Math.pow((double)(col - eCol), 2.0)); //find hcost
+        hCost = 1 * Math.sqrt(Math.pow((double)(row - eRow), 2.0) + Math.pow((double)(col - eCol), 2.0)); //find hcost
         cost = hCost + gCost;
 
     }
