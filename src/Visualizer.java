@@ -10,6 +10,10 @@ public class Visualizer extends JFrame{
     int [][] repArray = new int[20][20];
     String currentKey = "";
     String algoKeyResult  = "A*";
+    boolean isEndPointMoving = false;
+    TileButton movingButton;
+
+    //starting conditions
     int sRow = 18;
     int sCol = 19;
     int eRow = 5;
@@ -22,16 +26,19 @@ public class Visualizer extends JFrame{
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         initGrid();
         initUI();
-        initPoints();
         this.setVisible(true);
         this.setFocusable(true);
         this.setFocusTraversalKeysEnabled(false);
-
     }
 
+    public void initPoints(){
+        repArray[sRow][sCol] = 10;
+        repArray[eRow][eCol] = 20;
+    }
+    //used to create the UI
     public void initUI(){
-        this.add(gridPanel);
         JButton retry = new JButton("Reset");
+        initPoints();
         JButton runSearch = new JButton("Run " + algoKeyResult);
         JPanel actions = new JPanel(new GridLayout(1, 2));
         actions.add(runSearch);
@@ -42,8 +49,8 @@ public class Visualizer extends JFrame{
             @Override
             public void keyTyped(KeyEvent e) {
                 char keyCode = e.getKeyChar();
-                System.out.println("Changed Key: " + keyCode);
                switch (keyCode){
+                   //set the current key or algortithm to a certain algo based on character clicked
                    case 'c':
                        currentKey = "C";
                        break;
@@ -75,6 +82,7 @@ public class Visualizer extends JFrame{
                 currentKey = "";
             }
         });
+        //removes focus
         runSearch.setFocusable(false);
         retry.setFocusable(false);
         retry.addActionListener(
@@ -83,6 +91,7 @@ public class Visualizer extends JFrame{
                     public void actionPerformed(ActionEvent e) {
                         for(int i = 0; i < repArray.length;i ++){
                             for(int j = 0 ; j <repArray[i].length; j++){
+
                                 if(repArray[i][j] == -5 || repArray[i][j] == 1){
                                     repArray[i][j] = 0;
                                 }
@@ -108,13 +117,8 @@ public class Visualizer extends JFrame{
         );
 
     }
-    public void initPoints(){
-        gridArray[sRow][sCol].setBackground(Color.ORANGE);
-        repArray[sRow][sCol] = 10;
-        repArray[eRow][eCol] = 20;
-        gridArray[eRow][eCol].setBackground(Color.ORANGE);
 
-    }
+    //reset repArray based on tiles
     public void computeGrid(){
         for(int i = 0; i < gridArray.length; i++){
             for(int j = 0; j <gridArray[0].length; j++){
@@ -128,7 +132,9 @@ public class Visualizer extends JFrame{
                 }
             }
         }
+
     }
+
 
     public int[][] copyArray(int [][] array){
         int [][] newArray = new int[array.length][];
@@ -143,9 +149,11 @@ public class Visualizer extends JFrame{
             for(int j = 0; j < repArray[i].length; j++){
                 if(repArray[i][j] != -1){
                     if(repArray[i][j] == 10){
+                        System.out.println("Ran across it");
                         gridArray[i][j].setBackground(Color.orange);
                     }
                     else if(repArray[i][j] == 20){
+                        System.out.println("Ran across it");
                         gridArray[i][j].setBackground(Color.orange);
                     }
                     else{
@@ -156,31 +164,117 @@ public class Visualizer extends JFrame{
 
             }
     }
+        this.revalidate();
+            this.repaint();
 
 }
 
+    public void handleMouseClicks(int row, int col, MouseEvent e){
+        TileButton clickedButton = (TileButton) e.getSource();
+        //swapping the end points
+        if(isEndPointMoving && !(clickedButton.val > 0)){
+            if(movingButton.val == 10){
+                repArray[sRow][sCol] = 0;
+                repArray[row][col] = 10;
+                sRow = row;
+                sCol = col;
+
+            }
+            else{
+                repArray[eRow][eCol] = 0;
+                repArray[row][col] = 20;
+                eRow = row;
+                eCol = col;
+            }
+            isEndPointMoving = false;
+            movingButton = null;
+            this.remove(gridPanel);
+            initGrid();
+
+        }else{
+            if(clickedButton.isClicked){
+                clickedButton.setBackground(Color.white);
+            }
+            else{
+                clickedButton.setBackground(Color.black);
+            }
+            clickedButton.isClicked = !clickedButton.isClicked;
+        }
+        computeGrid();
+
+    }
+
+    public void handleMouseEntered(MouseEvent e){
+        TileButton clickedButton = (TileButton) e.getSource();
+        //show the hover effect of the end point when the mouese comes into the tile
+        if(isEndPointMoving && !(clickedButton.val > 0)){
+            clickedButton.setBackground(Color.orange);
+
+        }
+    }
+
+    public void handleMouseExited(MouseEvent e){
+        TileButton clickedButton = (TileButton) e.getSource();
+        //show the hover effect of the end point when the moves leaves the Tile
+        if(isEndPointMoving){
+            if(clickedButton.isClicked){
+                clickedButton.setBackground(Color.black);
+            }
+            else{
+                clickedButton.setBackground(Color.white);
+            }
+        }
+    }
+
+    public void handleMouseMoved(MouseEvent e){
+        TileButton clickedButton = (TileButton) e.getSource();
+        //if the end point isnt moving create and destory walls
+        if(!(isEndPointMoving && !(clickedButton.val > 0))){
+            Color color = null;
+            boolean willBeAWall = false;
+            if(currentKey.equals("C")){
+                color = Color.black;
+                willBeAWall = true;
+            }
+            else if(currentKey.equals("E")){
+                color = Color.white;
+
+            }
+
+            if(color != null){
+                clickedButton.setBackground(color);
+                clickedButton.isClicked = willBeAWall;
+                computeGrid();
+            }
+
+        }
+
+    }
+
     public void initGrid(){
+        gridPanel = new JPanel(new GridLayout(20,20));
         for(int i = 0; i < gridArray.length; i++)
             for(int j = 0; j < gridArray.length; j++){
 
-                 gridArray[i][j] = new TileButton();
-                 gridArray[i][j].setFocusable(false);
-                gridArray[i][j].setMargin(new Insets(0, 0, 0, 0));
-                 if(!((i == sRow && j == sCol) || (i == eRow && j == eCol))){
+                final int row = i;
+                final int col = j;
 
-
-                     gridArray[i][j].addMouseListener(new MouseListener() {
+                if(!((row == sRow && col == sCol) || (row == eRow && col == eCol))){
+                    gridArray[row][col] = new TileButton();
+                    gridArray[row][col].setFocusable(false);
+                    gridArray[row][col].setMargin(new Insets(0, 0, 0, 0));
+                    //keep walls
+                    if(repArray[row][col] == -1){
+                        gridArray[row][col].setBackground(Color.black);
+                        gridArray[row][col].isClicked = true;
+                    }
+                     //handles click of the TileButton to turn the button to a wall
+                     gridArray[row][col].addMouseListener(new MouseListener() {
                          @Override
+
+
                          public void mouseClicked(MouseEvent e) {
-                             TileButton clickedButton = (TileButton) e.getSource();
-                             if(clickedButton.isClicked){
-                                 clickedButton.setBackground(Color.white);
-                             }
-                             else{
-                                 clickedButton.setBackground(Color.black);
-                             }
-                             clickedButton.isClicked = !clickedButton.isClicked;
-                             computeGrid();
+                            handleMouseClicks(row, col, e);
                          }
 
                          @Override
@@ -195,15 +289,16 @@ public class Visualizer extends JFrame{
 
                          @Override
                          public void mouseEntered(MouseEvent e) {
-
+                             handleMouseEntered(e);
                          }
 
                          @Override
                          public void mouseExited(MouseEvent e) {
-
+                                handleMouseExited(e);
                          }
                      });
 
+                     //handles the auto-wall creation of the button
                      gridArray[i][j].addMouseMotionListener(new MouseMotionListener() {
                          @Override
                          public void mouseDragged(MouseEvent e) {
@@ -211,36 +306,62 @@ public class Visualizer extends JFrame{
 
                          @Override
                          public void mouseMoved(MouseEvent e) {
-
-                             TileButton clickedButton = (TileButton) e.getSource();
-                             Color color = null;
-                             boolean willBeAWall = false;
-                             if(currentKey.equals("C")){
-                                 color = Color.black;
-                                 willBeAWall = true;
-                             }
-                             else if(currentKey.equals("E")){
-                                 color = Color.white;
-
-                             }
-
-                             if(color != null){
-                                 clickedButton.setBackground(color);
-                                 clickedButton.isClicked = willBeAWall;
-                                 computeGrid();
-                             }
-
-
+                             handleMouseMoved(e);
                          }
+
+
                      });
                  }
 
+                 //this is for end points
+                 else{
+                     if(sRow == row && sCol == col ){
+                         gridArray[i][j] = new TileButton(10);
+                     }
+                     else{
+                         gridArray[i][j] = new TileButton(20);
+                     }
+                     gridArray[i][j].setBackground(Color.ORANGE);
+                     gridArray[i][j].setFocusable(false);
+                     gridArray[i][j].setMargin(new Insets(0, 0, 0, 0));
 
+                     gridArray[i][j].addMouseListener(new MouseListener() {
+                        @Override
+                        public void mouseClicked(MouseEvent e) {
+                            if(!isEndPointMoving){
+                                movingButton = (TileButton) e.getSource();
+                            }
+                            isEndPointMoving = !isEndPointMoving;
+                        }
+
+                        @Override
+                        public void mousePressed(MouseEvent e) {
+
+                        }
+
+                        @Override
+                        public void mouseReleased(MouseEvent e) {
+
+                        }
+
+                        @Override
+                        public void mouseEntered(MouseEvent e) {
+
+                        }
+
+                        @Override
+                        public void mouseExited(MouseEvent e) {
+
+                        }
+                    });
+                 }
                     gridPanel.add(gridArray[i][j]);
             }
+
+            this.add(gridPanel);
+            this.revalidate();
+            this.repaint();
         }
-
-
 
     public static void main(String[] args) {
         new Visualizer();
@@ -251,26 +372,23 @@ public class Visualizer extends JFrame{
 
 class TileButton extends JButton{
     boolean isClicked = false;
+    int val = -999;
 
     public TileButton(){
         super();
         this.setBackground(Color.WHITE);
     }
+
+    public TileButton(int v){
+        super();
+        this.val = v;
+        this.setBackground(Color.orange);
+    }
+
 }
 
 
-class MouseMotionListenerHandler implements MouseMotionListener{
-    @Override
-    public void mouseDragged(MouseEvent e) {
-        System.out.println("Dragged");
-    }
-
-    @Override
-    public void mouseMoved(MouseEvent e) {
-        System.out.println(e.getX());
-    }
-}
-
+//used to show the actual algorithm path and show calculations with a delay
 class ColorChanger extends Thread{
     LocNode result;
     TileButton [][] gridArray;
@@ -285,9 +403,10 @@ class ColorChanger extends Thread{
 
     }
     public void run(){
+        //show the history of the moves with a delay
         while(!history.isEmpty()){
             try{
-                this.sleep(100);
+                this.sleep(25);
                 int [][] gridMoment = history.getLast();
                 processGridMoment(gridMoment);
                 if(calculations != null){
@@ -303,17 +422,23 @@ class ColorChanger extends Thread{
             }
 
         }
-
-        while(result != null){
-            try{
-                this.sleep(100);
-                gridArray[result.row][result.col].setBackground(Color.cyan);
-            }
-            catch(Exception e){
-                e.printStackTrace();
-            }
-            result = result.previous;
+        if(result == null){
+            JOptionPane.showMessageDialog(null, "There is not path");
         }
+        else{
+            //result delay
+            while(result != null){
+                try{
+                    this.sleep(100);
+                    gridArray[result.row][result.col].setBackground(Color.cyan);
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+                result = result.previous;
+            }
+        }
+
 
 
     }

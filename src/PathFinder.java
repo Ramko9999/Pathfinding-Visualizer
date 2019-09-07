@@ -88,7 +88,7 @@ public class PathFinder {
         boolean canBeFound = true;
 
         //condition checks whether we reached end point
-        while(!(fcostHeader.element.row == endRow && fcostHeader.element.col == endCol) && canBeFound){
+        while(canBeFound && !(fcostHeader.element.row == endRow && fcostHeader.element.col == endCol)){
             history.addFirst(copyArray(board));
             calculationTimeLapse.addFirst(copyArray(calculationMoment));
             //gets a list of possible places we can move from our current position
@@ -100,8 +100,7 @@ public class PathFinder {
 
             }
             fcostHeader = fCostList.head; //keep going
-            fCostList._size--;
-            if(fCostList._size == 0){
+            if(fcostHeader == null){
                 canBeFound = false;
             }
 

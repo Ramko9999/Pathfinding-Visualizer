@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f25f589c-c3e1-4e80-a907-45f46e7d2334" name="Default Changelist" comment="">
+    <list default="true" id="f25f589c-c3e1-4e80-a907-45f46e7d2334" name="Default Changelist" comment="GOt most of the UI working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/ColorChanger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/ColorChanger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/TileButton$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/TileButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/TileButton.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PathFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PathFinder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Visualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visualizer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PathFinder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="78" selection-start-line="78" selection-end-line="78" />
+            <state relative-caret-position="-606">
+              <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#DFS#0;class#PathFinder#0" />
@@ -40,18 +40,29 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Visualizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+            <state relative-caret-position="2823">
+              <caret line="438" column="13" lean-forward="true" selection-start-line="438" selection-start-column="13" selection-end-line="438" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1582#1583#0" expanded="true" />
                 <element signature="e#1628#1629#0" expanded="true" />
-                <element signature="e#7975#7976#0" expanded="true" />
-                <element signature="e#8007#8008#0" expanded="true" />
-                <element signature="e#8295#8296#0" expanded="true" />
-                <element signature="e#8340#8341#0" expanded="true" />
-                <element signature="e#8398#8399#0" expanded="true" />
-                <element signature="e#8442#8443#0" expanded="true" />
+                <element signature="method#computeGrid#0;class#Visualizer#0" />
+                <element signature="method#copyArray#0;class#Visualizer#0" />
+                <element signature="method#handleMouseClicks#0;class#Visualizer#0" />
+                <element signature="method#handleMouseEntered#0;class#Visualizer#0" />
+                <element signature="method#handleMouseExited#0;class#Visualizer#0" />
+                <element signature="method#handleMouseMoved#0;class#Visualizer#0" />
+                <element signature="method#initGrid#0;class#Visualizer#0" />
+                <element signature="e#8187#8188#0" expanded="true" />
+                <element signature="e#8263#8264#0" expanded="true" />
+                <element signature="e#8980#8981#0" expanded="true" />
+                <element signature="e#9058#9059#0" expanded="true" />
+                <element signature="e#9601#9602#0" expanded="true" />
+                <element signature="e#9681#9682#0" expanded="true" />
+                <element signature="e#10832#10833#0" expanded="true" />
+                <element signature="e#10908#10909#0" expanded="true" />
+                <element signature="e#12064#12065#0" expanded="true" />
+                <element signature="class#TileButton#0" />
               </folding>
             </state>
           </provider>
@@ -243,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567812712791</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Auto Wall create &amp; erase; algo switching">
+      <created>1567820732668</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1567820732668</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -259,7 +277,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932796" visible="true" weight="0.042876903" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932796" visible="true" weight="0.34439835" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -283,7 +301,8 @@
     <MESSAGE value="Breadth First Search Working! DFS is not ideal" />
     <MESSAGE value="Visualizer Mostly Done, Small A* Star Bug: Queue" />
     <MESSAGE value="A* bug fix: UI shows up" />
-    <option name="LAST_COMMIT_MESSAGE" value="A* bug fix: UI shows up" />
+    <MESSAGE value="Auto Wall create &amp; erase; algo switching" />
+    <option name="LAST_COMMIT_MESSAGE" value="Auto Wall create &amp; erase; algo switching" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Node.java" />
@@ -333,8 +352,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PathFinder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        <state relative-caret-position="-606">
+          <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#DFS#0;class#PathFinder#0" />
@@ -345,18 +364,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Visualizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+        <state relative-caret-position="2823">
+          <caret line="438" column="13" lean-forward="true" selection-start-line="438" selection-start-column="13" selection-end-line="438" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1582#1583#0" expanded="true" />
             <element signature="e#1628#1629#0" expanded="true" />
-            <element signature="e#7975#7976#0" expanded="true" />
-            <element signature="e#8007#8008#0" expanded="true" />
-            <element signature="e#8295#8296#0" expanded="true" />
-            <element signature="e#8340#8341#0" expanded="true" />
-            <element signature="e#8398#8399#0" expanded="true" />
-            <element signature="e#8442#8443#0" expanded="true" />
+            <element signature="method#computeGrid#0;class#Visualizer#0" />
+            <element signature="method#copyArray#0;class#Visualizer#0" />
+            <element signature="method#handleMouseClicks#0;class#Visualizer#0" />
+            <element signature="method#handleMouseEntered#0;class#Visualizer#0" />
+            <element signature="method#handleMouseExited#0;class#Visualizer#0" />
+            <element signature="method#handleMouseMoved#0;class#Visualizer#0" />
+            <element signature="method#initGrid#0;class#Visualizer#0" />
+            <element signature="e#8187#8188#0" expanded="true" />
+            <element signature="e#8263#8264#0" expanded="true" />
+            <element signature="e#8980#8981#0" expanded="true" />
+            <element signature="e#9058#9059#0" expanded="true" />
+            <element signature="e#9601#9602#0" expanded="true" />
+            <element signature="e#9681#9682#0" expanded="true" />
+            <element signature="e#10832#10833#0" expanded="true" />
+            <element signature="e#10908#10909#0" expanded="true" />
+            <element signature="e#12064#12065#0" expanded="true" />
+            <element signature="class#TileButton#0" />
           </folding>
         </state>
       </provider>
