@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f25f589c-c3e1-4e80-a907-45f46e7d2334" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/A-Star Search/ColorChanger.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/A-Star Search/Controller.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/A-Star Search/TileButton$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/A-Star Search/TileButton.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/ColorChanger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/ColorChanger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/TileButton$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/TileButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/TileButton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Visualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visualizer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,7 +26,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PathFinder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
+            <state relative-caret-position="203">
               <caret line="78" selection-start-line="78" selection-end-line="78" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -40,11 +40,28 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Visualizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="38" column="36" lean-forward="true" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+            <state relative-caret-position="170">
+              <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1582#1583#0" expanded="true" />
+                <element signature="e#1628#1629#0" expanded="true" />
+                <element signature="e#7975#7976#0" expanded="true" />
+                <element signature="e#8007#8008#0" expanded="true" />
+                <element signature="e#8295#8296#0" expanded="true" />
+                <element signature="e#8340#8341#0" expanded="true" />
+                <element signature="e#8398#8399#0" expanded="true" />
+                <element signature="e#8442#8443#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.desktop/java/awt/event/MouseMotionListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -219,14 +236,21 @@
       <option name="project" value="LOCAL" />
       <updated>1567745219589</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="A* bug fix: UI shows up">
+      <created>1567812712791</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1567812712791</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="0" width="1548" height="832" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2548892" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2548892" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -235,7 +259,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932796" visible="true" weight="0.051175658" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932796" visible="true" weight="0.042876903" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -258,7 +282,8 @@
     <MESSAGE value="Depth First Search" />
     <MESSAGE value="Breadth First Search Working! DFS is not ideal" />
     <MESSAGE value="Visualizer Mostly Done, Small A* Star Bug: Queue" />
-    <option name="LAST_COMMIT_MESSAGE" value="Visualizer Mostly Done, Small A* Star Bug: Queue" />
+    <MESSAGE value="A* bug fix: UI shows up" />
+    <option name="LAST_COMMIT_MESSAGE" value="A* bug fix: UI shows up" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Node.java" />
@@ -276,18 +301,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="77">
           <caret line="258" column="28" selection-start-line="258" selection-start-column="28" selection-end-line="258" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PathFinder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#DFS#0;class#PathFinder#0" />
-            <element signature="method#generateNewNodesForTreeSearch#0;class#PathFinder#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -311,12 +324,39 @@
     <entry file="file://$PROJECT_DIR$/A-Star Search.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Visualizer.java">
+    <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.desktop/java/awt/event/MouseMotionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="38" column="36" lean-forward="true" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+        <state relative-caret-position="92">
+          <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PathFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#DFS#0;class#PathFinder#0" />
+            <element signature="method#generateNewNodesForTreeSearch#0;class#PathFinder#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Visualizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1582#1583#0" expanded="true" />
+            <element signature="e#1628#1629#0" expanded="true" />
+            <element signature="e#7975#7976#0" expanded="true" />
+            <element signature="e#8007#8008#0" expanded="true" />
+            <element signature="e#8295#8296#0" expanded="true" />
+            <element signature="e#8340#8341#0" expanded="true" />
+            <element signature="e#8398#8399#0" expanded="true" />
+            <element signature="e#8442#8443#0" expanded="true" />
           </folding>
         </state>
       </provider>
