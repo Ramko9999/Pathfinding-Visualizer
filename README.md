@@ -13,6 +13,17 @@ git clone https://github.com/futuristacademy/PathFindingVisualizer.git
 ```
 Then use some sort of cmd tool or Java IDE to open the project and run it.
 
+## Controls
+
+C + mouse move will automatically create walls as you move past the tiles
+
+E + mouse move will automatically erase walls as you move past the tiles
+
+A will set the algorithm to A*
+
+B will set the algorithm to BFS
+
+
 
 
 
