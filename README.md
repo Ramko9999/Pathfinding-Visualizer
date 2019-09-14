@@ -17,7 +17,7 @@ Then use some sort of cmd tool or Java IDE to open the project and run it.
 
 Holding down C + mouse move will automatically create walls as you move past the tiles
 
-![Wall Creation](https://camo.githubusercontent.com/47b705dba82cb49af9e930e7dbff34c08a7d2009/68747470733a2f2f696d332e657a6769662e636f6d2f746d702f657a6769662d332d3730663466326164656637612e676966)
+![Wall Creation](https://im3.ezgif.com/tmp/ezgif-3-70f4f2adef7a.gif)
 
 Holding down E + mouse move will automatically erase walls as you move past the tiles
 
@@ -25,7 +25,7 @@ Holding down E + mouse move will automatically erase walls as you move past the 
 
 Clicking on the Start and End points will allow you to change them to different places
 
-![Moving End Points](file:///C:/Users/Subhadra/Documents/End%20Point%20Moving.gif)
+![Moving End Points](https://im3.ezgif.com/tmp/ezgif-3-7333a0ee4d73.gif)
 
 Clicking A will set the algorithm to A* and Clicking B will set the algorithm to BFS
 
@@ -33,11 +33,11 @@ Clicking A will set the algorithm to A* and Clicking B will set the algorithm to
 
 A* search
 
-![A* Search](https://camo.githubusercontent.com/a0d669da32f65f71dd1bbf30123157170668bf96/68747470733a2f2f696d332e657a6769662e636f6d2f746d702f657a6769662d332d3038326538666430363032632e676966)
+![A* Search](https://im3.ezgif.com/tmp/ezgif-3-082e8fd0602c.gif)
 
 BFS
 
-![BFS](https://camo.githubusercontent.com/e577bf2bd543df44eb44a6a11a09dd6577121fed/68747470733a2f2f696d332e657a6769662e636f6d2f746d702f657a6769662d332d3530346631343932653737382e676966)
+![BFS](https://im3.ezgif.com/tmp/ezgif-3-504f1492e778.gif)
 
 
 
