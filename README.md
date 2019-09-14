@@ -21,7 +21,7 @@ Holding down C + mouse move will automatically create walls as you move past the
 
 Holding down E + mouse move will automatically erase walls as you move past the tiles
 
-![Wall Deletion](file:///C:/Users/Subhadra/Documents/Wall%20deletino.gif)
+![Wall Deletion](https://im3.ezgif.com/tmp/ezgif-3-d67d55c153bb.gif)
 
 Clicking on the Start and End points will allow you to change them to different places
 
@@ -33,11 +33,11 @@ Clicking A will set the algorithm to A* and Clicking B will set the algorithm to
 
 A* search
 
-![A* Search](https://im3.ezgif.com/tmp/ezgif-3-082e8fd0602c.gif)
+![A* Search](https://camo.githubusercontent.com/a0d669da32f65f71dd1bbf30123157170668bf96/68747470733a2f2f696d332e657a6769662e636f6d2f746d702f657a6769662d332d3038326538666430363032632e676966)
 
 BFS
 
-![BFS](https://im3.ezgif.com/tmp/ezgif-3-504f1492e778.gif)
+![BFS](https://camo.githubusercontent.com/e577bf2bd543df44eb44a6a11a09dd6577121fed/68747470733a2f2f696d332e657a6769662e636f6d2f746d702f657a6769662d332d3530346631343932653737382e676966)
 
 
 
