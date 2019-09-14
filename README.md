@@ -19,11 +19,13 @@ C + mouse move will automatically create walls as you move past the tiles
 
 E + mouse move will automatically erase walls as you move past the tiles
 
-A will set the algorithm to A*
-
-B will set the algorithm to BFS
+A will set the algorithm to A* and B will set the algorithm to BFS
 
 Clicking on the Start and End points will allow you to change them to different places
+
+Demo: A* search
+
+![A* Search](https://im3.ezgif.com/tmp/ezgif-3-082e8fd0602c.gif)
 
 
 
