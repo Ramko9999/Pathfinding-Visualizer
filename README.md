@@ -23,6 +23,8 @@ A will set the algorithm to A*
 
 B will set the algorithm to BFS
 
+Clicking on the Start and End points will allow you to change them to different places
+
 
 
 
