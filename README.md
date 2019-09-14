@@ -15,18 +15,29 @@ Then use some sort of cmd tool or Java IDE to open the project and run it.
 
 ## Controls
 
-C + mouse move will automatically create walls as you move past the tiles
+Holding down C + mouse move will automatically create walls as you move past the tiles
 
-E + mouse move will automatically erase walls as you move past the tiles
+![Wall Creation](https://im3.ezgif.com/tmp/ezgif-3-70f4f2adef7a.gif)
 
-A will set the algorithm to A* and B will set the algorithm to BFS
+Holding down E + mouse move will automatically erase walls as you move past the tiles
+
+![Wall Deletion](file:///C:/Users/Subhadra/Documents/Wall%20deletino.gif)
 
 Clicking on the Start and End points will allow you to change them to different places
 
-Demo: A* search
+![Moving End Points](file:///C:/Users/Subhadra/Documents/End%20Point%20Moving.gif)
+
+Clicking A will set the algorithm to A* and Clicking B will set the algorithm to BFS
+
+## Demos
+
+A* search
 
 ![A* Search](https://im3.ezgif.com/tmp/ezgif-3-082e8fd0602c.gif)
 
+BFS
+
+![BFS](https://im3.ezgif.com/tmp/ezgif-3-504f1492e778.gif)
 
 
 
