@@ -11,7 +11,7 @@ To see this project, start by cloning it into a directory
 ```
 git clone https://github.com/futuristacademy/PathFindingVisualizer.git
 ```
-Then use some sort of cmd tool or Java IDE to open the project and run it.
+Then use either a command line tool or Java IDE to open the project and run it.
 
 ## Controls
 
