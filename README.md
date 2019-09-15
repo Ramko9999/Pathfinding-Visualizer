@@ -17,7 +17,7 @@ Then use either a command line tool or Java IDE to open the project and run it.
 
 Holding down C + mouse move will automatically create walls as you move past the tiles
 
-![Wall Creation](https://im3.ezgif.com/tmp/ezgif-3-70f4f2adef7a.gif)
+![Wall Creation](https://camo.githubusercontent.com/47b705dba82cb49af9e930e7dbff34c08a7d2009/68747470733a2f2f696d332e657a6769662e636f6d2f746d702f657a6769662d332d3730663466326164656637612e676966)
 
 Holding down E + mouse move will automatically erase walls as you move past the tiles
 
