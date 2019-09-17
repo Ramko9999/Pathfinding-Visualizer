@@ -241,7 +241,13 @@ public class Visualizer extends JFrame{
 
         //show the hover effect of the end point when the mouse comes into the tile
         if(isEndPointMoving && !(clickedButton.val > 0)){
-            clickedButton.setBackground(Color.orange);
+
+            if(movingButton.val == 10){
+                clickedButton.setBackground(Color.orange);
+            }
+            else{
+                clickedButton.setBackground(Color.magenta);
+            }
 
         }
     }
@@ -355,11 +361,13 @@ public class Visualizer extends JFrame{
                  else{
                      if(sRow == row && sCol == col ){
                          gridArray[i][j] = new TileButton(10);
+                         gridArray[i][j].setBackground(Color.ORANGE);
                      }
                      else{
                          gridArray[i][j] = new TileButton(20);
+                         gridArray[i][j].setBackground(Color.MAGENTA);
                      }
-                     gridArray[i][j].setBackground(Color.ORANGE);
+
                      gridArray[i][j].setFocusable(false);
                      gridArray[i][j].setMargin(new Insets(0, 0, 0, 0));
 
@@ -379,7 +387,7 @@ public class Visualizer extends JFrame{
 
                         @Override
                         public void mouseReleased(MouseEvent e) {
-
+                            Visualizer.super.repaint();
                         }
 
                         @Override
@@ -420,7 +428,12 @@ class TileButton extends JButton{
     public TileButton(int v){
         super();
         this.val = v;
-        this.setBackground(Color.orange);
+        if(v == 10){
+            this.setBackground(Color.orange);
+        }
+        else{
+            this.setBackground(Color.magenta);
+        }
     }
 
 }
@@ -439,7 +452,7 @@ class ColorChanger extends Thread{
     LinkedList<int [][]> history;
     LinkedList<int [][]> calculations;
 
-    public ColorChanger(LinkedList<int [][]> h, LocNode r, TileButton[][] g, LinkedList<int [][]> c){
+    public ColorChanger(LinkedList h, LocNode r, TileButton[][] g, LinkedList<int [][]> c){
         super();
         result = r;
         gridArray = g;
@@ -454,7 +467,7 @@ class ColorChanger extends Thread{
             try{
 
                 //25 second delay
-                this.sleep(25);
+                this.sleep(50);
 
                 //show calculated and examined nodes as well as costs
                 int [][] gridMoment = history.getLast();
@@ -499,7 +512,7 @@ class ColorChanger extends Thread{
 
     }
 
-    private void processGridMoment(int [][] moment){
+    public void processGridMoment(int [][] moment){
 
         //sets color based on whether node is examined or calculated
         for(int i =0; i < moment.length; i++){
@@ -514,7 +527,7 @@ class ColorChanger extends Thread{
         }
     }
 
-    private void calculateGridMoment(int [][] moment, int [][] calcMoment){
+    public void calculateGridMoment(int [][] moment, int [][] calcMoment){
 
         //sets cost of a node
         for(int i =0; i < moment.length; i++){
