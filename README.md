@@ -1,8 +1,5 @@
 # PathFindingVisualizer 
-
-## Eden Prairie Team
-
-## Authors: Rohan S. Ramki P. Ashwin M. Will A. Raghava U.
+## Pathfinding
 
 Pathfinding is used in many different cases, ranging from Transportation (Uber) and Directions (Google Maps) to sending files through a network efficently. We aimed to create a program that will allow the user to see what is going on behind the scenes during the actual pathfinding. We implemented A* search and Breadth First Search as our main algorithms. 
 
