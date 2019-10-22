@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="A-Star Search:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f25f589c-c3e1-4e80-a907-45f46e7d2334" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/A_Star_Search_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloadable/A-Star Search.jar" beforeDir="false" afterPath="$PROJECT_DIR$/downloadable/A-Star Search.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/ColorChanger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/ColorChanger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Dimension.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/Dimension.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/LocNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/LocNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/MinList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/MinList.class" afterDir="false" />
@@ -40,18 +48,31 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Visualizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="511" selection-start-line="511" selection-end-line="511" />
+            <state relative-caret-position="295">
+              <caret line="104" column="64" lean-forward="true" selection-start-line="104" selection-start-column="64" selection-end-line="104" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2899#3538#0" expanded="true" />
+                <element signature="e#3537#3538#0" expanded="true" />
+                <element signature="e#3640#4273#0" expanded="true" />
+                <element signature="e#4272#4273#0" expanded="true" />
                 <element signature="method#computeGrid#0;class#Visualizer#0" />
                 <element signature="method#copyArray#0;class#Visualizer#0" />
                 <element signature="e#12227#12228#0" expanded="true" />
                 <element signature="e#12309#12310#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -117,11 +138,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="42" />
-    <option name="y" value="52" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="167" />
+    <option name="y" value="53" />
     <option name="width" value="1935" />
-    <option name="height" value="1039" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -140,31 +161,24 @@
             <path>
               <item name="A-Star Search" type="b2602c69:ProjectViewProjectNode" />
               <item name="A-Star Search" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="A-Star Search" type="b2602c69:ProjectViewProjectNode" />
-              <item name="A-Star Search" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="A-Star Search" type="b2602c69:ProjectViewProjectNode" />
-              <item name="A-Star Search" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="A_Star_Search_jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="A-Star Search" type="b2602c69:ProjectViewProjectNode" />
-              <item name="A-Star Search" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="downloadable" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="A-Star Search" type="b2602c69:ProjectViewProjectNode" />
               <item name="A-Star Search" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="A-Star Search" type="b2602c69:ProjectViewProjectNode" />
+              <item name="A-Star Search" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="A-Star Search" type="b2602c69:ProjectViewProjectNode" />
+              <item name="A-Star Search" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Visualizer.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </path>
           </expand>
           <select />
@@ -177,8 +191,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/downloadable" />
     <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ramap\IdeaProjects\A-Star Search\downloadable" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -192,7 +211,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Visualizer">
+  <component name="RunManager" selected="JAR Application.A-Star Search.jar">
     <configuration name="MinList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MinList" />
       <module name="A-Star Search" />
@@ -221,8 +240,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="A-Star Search.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/downloadable/A-Star Search.jar" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JAR Application.A-Star Search.jar" />
         <item itemvalue="Application.Visualizer" />
         <item itemvalue="Application.PathFinder" />
         <item itemvalue="Application.Runnner" />
@@ -297,13 +321,20 @@
       <option name="project" value="LOCAL" />
       <updated>1568438297697</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Final Changes and made a jar">
+      <created>1568748186778</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1568748186778</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="134" y="43" width="1548" height="832" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25455728" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2548892" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -312,7 +343,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932796" visible="true" weight="0.5788752" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932796" visible="true" weight="0.43153527" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -320,7 +351,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.31857142" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50067204" side_tool="true" weight="0.042857144" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.39834026" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32918397" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32784638" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -339,7 +370,8 @@
     <MESSAGE value="Auto Wall create &amp; erase; algo switching" />
     <MESSAGE value="GOt most of the UI working" />
     <MESSAGE value="Cleaner Code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaner Code" />
+    <MESSAGE value="Final Changes and made a jar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Changes and made a jar" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Node.java" />
@@ -360,6 +392,10 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/A-Star Search/ColorChanger.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/downloadable/random.txt" />
     <entry file="file://$PROJECT_DIR$/src/PathFinder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4930">
@@ -397,20 +433,28 @@
     <entry file="file://$PROJECT_DIR$/A-Star Search.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/A-Star Search/ColorChanger.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Visualizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="511" selection-start-line="511" selection-end-line="511" />
+        <state relative-caret-position="295">
+          <caret line="104" column="64" lean-forward="true" selection-start-line="104" selection-start-column="64" selection-end-line="104" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2899#3538#0" expanded="true" />
+            <element signature="e#3537#3538#0" expanded="true" />
+            <element signature="e#3640#4273#0" expanded="true" />
+            <element signature="e#4272#4273#0" expanded="true" />
             <element signature="method#computeGrid#0;class#Visualizer#0" />
             <element signature="method#copyArray#0;class#Visualizer#0" />
             <element signature="e#12227#12228#0" expanded="true" />
             <element signature="e#12309#12310#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>

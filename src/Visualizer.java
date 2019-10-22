@@ -52,7 +52,7 @@ public class Visualizer extends JFrame{
 
         //creates JPanel UI
         JButton retry = new JButton("Reset");
-        JButton runSearch = new JButton("Run " + algoKeyResult);
+        final JButton runSearch = new JButton("Run " + algoKeyResult);
         JPanel actions = new JPanel(new GridLayout(1, 2));
         actions.add(runSearch);
         actions.add(retry);
