@@ -225,9 +225,15 @@ public class Visualizer extends JFrame{
 
             if(clickedButton.isClicked){
                 clickedButton.setBackground(Color.white);
+                clickedButton.setOpaque(true);
+                clickedButton.setBorderPainted(false);
             }
             else{
                 clickedButton.setBackground(Color.black);
+                clickedButton.setOpaque(true);
+                clickedButton.setBorderPainted(false);
+
+                System.out.println("Clicked on a tile");
             }
             clickedButton.isClicked = !clickedButton.isClicked;
         }
@@ -244,9 +250,13 @@ public class Visualizer extends JFrame{
 
             if(movingButton.val == 10){
                 clickedButton.setBackground(Color.orange);
+                clickedButton.setOpaque(true);
+                clickedButton.setBorderPainted(false);
             }
             else{
                 clickedButton.setBackground(Color.magenta);
+                clickedButton.setOpaque(true);
+                clickedButton.setBorderPainted(false);
             }
 
         }
@@ -258,9 +268,13 @@ public class Visualizer extends JFrame{
         if(isEndPointMoving){
             if(clickedButton.isClicked){
                 clickedButton.setBackground(Color.black);
+                clickedButton.setOpaque(true);
+                clickedButton.setBorderPainted(false);
             }
             else{
                 clickedButton.setBackground(Color.white);
+                clickedButton.setOpaque(true);
+                clickedButton.setBorderPainted(false);
             }
         }
     }
@@ -287,6 +301,8 @@ public class Visualizer extends JFrame{
             if(color != null){
 
                 clickedButton.setBackground(color);
+                clickedButton.setOpaque(true);
+                clickedButton.setBorderPainted(false);
                 clickedButton.isClicked = willBeAWall;
                 computeGrid();
             }
@@ -310,6 +326,8 @@ public class Visualizer extends JFrame{
                     //keep walls
                     if(repArray[row][col] == -1){
                         gridArray[row][col].setBackground(Color.black);
+                        gridArray[row][col].setOpaque(true);
+                        gridArray[row][col].setBorderPainted(false);
                         gridArray[row][col].isClicked = true;
                     }
                      //handles click of the TileButton to turn the button to a wall
@@ -362,10 +380,14 @@ public class Visualizer extends JFrame{
                      if(sRow == row && sCol == col ){
                          gridArray[i][j] = new TileButton(10);
                          gridArray[i][j].setBackground(Color.ORANGE);
+                         gridArray[row][col].setOpaque(true);
+                         gridArray[row][col].setBorderPainted(false);
                      }
                      else{
                          gridArray[i][j] = new TileButton(20);
                          gridArray[i][j].setBackground(Color.MAGENTA);
+                         gridArray[row][col].setOpaque(true);
+                         gridArray[row][col].setBorderPainted(false);
                      }
 
                      gridArray[i][j].setFocusable(false);
@@ -423,6 +445,8 @@ class TileButton extends JButton{
     public TileButton(){
         super();
         this.setBackground(Color.WHITE);
+        this.setOpaque(true);
+        this.setBorderPainted(false);
     }
 
     public TileButton(int v){
@@ -430,9 +454,13 @@ class TileButton extends JButton{
         this.val = v;
         if(v == 10){
             this.setBackground(Color.orange);
+            this.setOpaque(true);
+            this.setBorderPainted(false);
         }
         else{
             this.setBackground(Color.magenta);
+            this.setOpaque(true);
+            this.setBorderPainted(false);
         }
     }
 
@@ -519,9 +547,13 @@ class ColorChanger extends Thread{
             for(int j = 0; j < moment[i].length; j++){
                 if(moment[i][j] == -5){
                     gridArray[i][j].setBackground(Color.RED);
+                    gridArray[i][j].setOpaque(true);
+                    gridArray[i][j].setBorderPainted(false);
                 }
                 if(moment[i][j] == 1){
                     gridArray[i][j].setBackground(Color.green);
+                    gridArray[i][j].setOpaque(true);
+                    gridArray[i][j].setBorderPainted(false);
                 }
             }
         }
@@ -533,9 +565,9 @@ class ColorChanger extends Thread{
         for(int i =0; i < moment.length; i++){
             for(int j = 0; j < moment[i].length; j++){
                 if(moment[i][j] == -5 || moment[i][j] == 1){
-                    gridArray[i][j].setText(calcMoment[i][j] + "");
+                   //gridArray[i][j].setText(calcMoment[i][j] + "");
                     gridArray[i][j].setForeground(Color.white);
-                    gridArray[i][j].setFont(new Font("Helvetica", Font.BOLD, 12));
+                    gridArray[i][j].setFont(new Font("Helvetica", Font.BOLD, 7));
 
                 }
 
