@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.LinkedList;
-import java.util.Stack;
 
 public class Visualizer extends JFrame{
 
@@ -495,7 +494,7 @@ class ColorChanger extends Thread{
             try{
 
                 //25 second delay
-                this.sleep(50);
+                this.sleep(25);
 
                 //show calculated and examined nodes as well as costs
                 int [][] gridMoment = history.getLast();
@@ -519,7 +518,7 @@ class ColorChanger extends Thread{
 
         //display no path alert
         if(result == null){
-            JOptionPane.showMessageDialog(null, "There is not path");
+            JOptionPane.showMessageDialog(null, "There is no path");
         }
         else{
 

@@ -1,8 +1,6 @@
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
 
 //a class that contains different algorithms to search a grid to find the optimal path
 
@@ -41,13 +39,6 @@ public class PathFinder {
 
     }
 
-    public static void main(String[] args) {
-        PathFinder pathFinder =  new PathFinder(new int[12][12], 7, 0, 9, 10);
-        pathFinder.A_Star_Search();
-        System.out.println("----------------");
-        pathFinder.BFS();
-
-    }
 
     //used to create a copy of an array
     public int[][] copyArray(int [][] array){
@@ -193,105 +184,6 @@ public class PathFinder {
         return validNodeGenerator;
     }
 
-    //gives the path using Depth First Search: Doesn't find shortest path
-    public void DFS(){
-
-        //init maze and end
-        int [][] board = copyArray(this.board);
-        board[startRow][startCol] = 10;
-        board[endRow][endCol] = 20;
-
-        //create a stack for pushing and popping new nodes
-        Stack<LocNode> nodeStack = new Stack();
-
-        //init locations
-        LocNode startingLocation = new LocNode(startRow, startCol, 0);
-        LocNode finalNode = null;
-        nodeStack.push(startingLocation);
-        boolean isNodeStackEmpty = false;
-        boolean foundEndPoint = false;
-
-        //until our locNode stack gives us the location
-        while(!nodeStack.empty()){
-
-            //checks whether an end point is found
-            if(foundEndPoint){
-
-                //checks whether there is a previous end point
-                if(finalNode == null){
-
-                    finalNode = nodeStack.peek();
-                }
-
-                //checks whether new end point history is less than old end point history
-                else if(finalNode.size > nodeStack.peek().size){
-
-                    finalNode = nodeStack.peek();
-                }
-
-
-                foundEndPoint = false;
-                nodeStack.pop();
-
-            }
-            else{
-
-                //generates possible LocNodes from latest node in the stack
-                LocNode previousLocationNode = nodeStack.peek();
-                ArrayList<LocNode> locations = generateNewNodesForTreeSearch(previousLocationNode,  board, "DFS");
-
-                //removes node
-                nodeStack.pop();
-                LocNode targetNode = null;
-
-                //appends and checks whether a node is a target node
-                for(LocNode locationNode: locations){
-
-                    if(!nodeStack.empty() && (nodeStack.peek().row ==  endRow && nodeStack.peek().col ==  endCol)){
-
-                        foundEndPoint = true;
-                        targetNode = nodeStack.peek();
-                    }
-
-                    else{
-                        nodeStack.push(locationNode);
-                    }
-
-                }
-
-                //if the final destination is in the loc node list, then it needs to be at the end
-                if(targetNode != null){
-                    nodeStack.push(targetNode);
-                }
-            }
-
-
-        }
-
-        if(isNodeStackEmpty){
-
-            System.out.println("Path can't be found with DFS");
-        }
-        else{
-            //print path
-
-            LocNode current = finalNode; //nodeStack.peek();
-            int counter = 0;
-            System.out.println("DFS Predicts the best path is as follows: ");
-
-            while( current != null){
-                System.out.println(current.row + " , " + current.col);
-                board[current.row][current.col] = 4;
-                counter++;
-                current = current.previous;
-            }
-
-            System.out.println("# of Moves : "   + counter);
-
-        }
-
-
-    }
 
     //gives the path using Breadth First Search WORKING!
 
@@ -334,9 +226,7 @@ public class PathFinder {
             return null;
         }
         else{
-            LocNode endNode = nodeQueue.getLast();
-           return endNode;
-
+            return nodeQueue.getLast();
         }
 
     }
