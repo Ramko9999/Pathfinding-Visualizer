@@ -6,13 +6,26 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f25f589c-c3e1-4e80-a907-45f46e7d2334" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f25f589c-c3e1-4e80-a907-45f46e7d2334" name="Default Changelist" comment="Improved Code Structure">
+      <change afterPath="$PROJECT_DIR$/src/algos/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/algos/Path.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/algos/PathFinder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/visual/Settings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/ColorChanger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A-Star Search/ColorChanger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PathFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PathFinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Visualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visualizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/ColorChanger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Dimension.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/LocNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/MinList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/PathFinder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/TileButton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PathFinder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Visualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/visual/Visualizer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,39 +40,72 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PathFinder.java">
+        <entry file="file://$PROJECT_DIR$/src/algos/Node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+            <state relative-caret-position="-289">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+              <folding>
+                <element signature="e#623#624#0" expanded="true" />
+                <element signature="e#662#663#0" expanded="true" />
+                <element signature="e#693#694#0" expanded="true" />
+                <element signature="e#732#733#0" expanded="true" />
+                <element signature="e#767#768#0" expanded="true" />
+                <element signature="e#807#808#0" expanded="true" />
+                <element signature="e#844#845#0" expanded="true" />
+                <element signature="e#888#889#0" expanded="true" />
+                <element signature="e#938#939#0" expanded="true" />
+                <element signature="e#986#987#0" expanded="true" />
+                <element signature="e#1039#1040#0" expanded="true" />
+                <element signature="e#1100#1101#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/visual/Visualizer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1089">
+              <caret line="556" lean-forward="true" selection-start-line="556" selection-end-line="556" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3389#3584#0" expanded="true" />
+                <element signature="e#3583#3584#0" expanded="true" />
+                <element signature="e#3714#4126#0" expanded="true" />
+                <element signature="e#4125#4126#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/visual/Settings.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/algos/PathFinder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="651">
+              <caret line="218" column="54" lean-forward="true" selection-start-line="218" selection-start-column="54" selection-end-line="218" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1689#1690#0" expanded="true" />
+                <element signature="e#1750#1751#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Visualizer.java">
+        <entry file="file://$PROJECT_DIR$/src/algos/Path.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9129">
-              <caret line="565" column="45" selection-start-line="565" selection-start-column="45" selection-end-line="565" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#computeGrid#0;class#Visualizer#0" />
-                <element signature="method#copyArray#0;class#Visualizer#0" />
-                <element signature="e#10648#10649#0" expanded="true" />
-                <element signature="e#10735#10736#0" expanded="true" />
-                <element signature="e#11098#11099#0" expanded="true" />
-                <element signature="e#11177#11178#0" expanded="true" />
-                <element signature="e#11278#11279#0" expanded="true" />
-                <element signature="e#11359#11360#0" expanded="true" />
-                <element signature="e#11769#11770#0" expanded="true" />
-                <element signature="e#11846#11847#0" expanded="true" />
-                <element signature="e#13399#13400#0" expanded="true" />
-                <element signature="e#13481#13482#0" expanded="true" />
-                <element signature="e#13992#13993#0" expanded="true" />
-                <element signature="e#14024#14025#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1037">
+              <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -79,19 +125,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.desktop/java/awt/Font.java">
+        <entry file="file://$PROJECT_DIR$/src/controller/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8483">
-              <caret line="571" column="11" selection-start-line="571" selection-start-column="11" selection-end-line="571" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+            <state relative-caret-position="340">
+              <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -113,6 +150,13 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>reset</find>
+      <find>Color.</find>
+      <find>Color.orange</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -124,9 +168,15 @@
         <option value="$PROJECT_DIR$/src/LocNode.java" />
         <option value="$PROJECT_DIR$/src/MinList.java" />
         <option value="$PROJECT_DIR$/src/Runnner.java" />
-        <option value="$PROJECT_DIR$/src/Controller.java" />
         <option value="$PROJECT_DIR$/src/PathFinder.java" />
+        <option value="$PROJECT_DIR$/src/algos/Node.java" />
+        <option value="$PROJECT_DIR$/src/Controller.java" />
         <option value="$PROJECT_DIR$/src/Visualizer.java" />
+        <option value="$PROJECT_DIR$/src/controller/Controller.java" />
+        <option value="$PROJECT_DIR$/src/algos/PathFinder.java" />
+        <option value="$PROJECT_DIR$/src/visual/Settings.java" />
+        <option value="$PROJECT_DIR$/src/visual/Visualizer.java" />
+        <option value="$PROJECT_DIR$/src/algos/Path.java" />
       </list>
     </option>
   </component>
@@ -142,7 +192,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -153,12 +202,32 @@
             <path>
               <item name="A-Star Search" type="b2602c69:ProjectViewProjectNode" />
               <item name="A-Star Search" type="462c0819:PsiDirectoryNode" />
-              <item name="downloadable" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="A-Star Search" type="b2602c69:ProjectViewProjectNode" />
+              <item name="A-Star Search" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="algos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="A-Star Search" type="b2602c69:ProjectViewProjectNode" />
+              <item name="A-Star Search" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="visual" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="A-Star Search" type="b2602c69:ProjectViewProjectNode" />
+              <item name="A-Star Search" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="visual" type="462c0819:PsiDirectoryNode" />
+              <item name="Visualizer.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -169,6 +238,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -207,7 +277,7 @@
       </method>
     </configuration>
     <configuration name="Visualizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Visualizer" />
+      <option name="MAIN_CLASS_NAME" value="visual.Visualizer" />
       <module name="A-Star Search" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -312,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571771966234</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Cleaned up some code">
+      <created>1586879596566</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1586879596568</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -322,7 +399,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1875" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1875" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -330,16 +407,16 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932796" visible="true" weight="0.041152265" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32921812" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932796" visible="true" weight="0.041152265" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39917696" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.31857142" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50067204" side_tool="true" weight="0.042857144" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.17009602" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32784638" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.57750344" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -360,7 +437,9 @@
     <MESSAGE value="Cleaner Code" />
     <MESSAGE value="Final Changes and made a jar" />
     <MESSAGE value="Redeployment Again" />
-    <option name="LAST_COMMIT_MESSAGE" value="Redeployment Again" />
+    <MESSAGE value="Cleaned up some code" />
+    <MESSAGE value="Improved Code Structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved Code Structure" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Node.java" />
@@ -391,50 +470,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/A-Star Search.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PathFinder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        <state relative-caret-position="1722">
+          <caret line="151" column="19" lean-forward="true" selection-start-line="151" selection-start-column="19" selection-end-line="151" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5440#5441#0" expanded="true" />
+            <element signature="e#5510#5511#0" expanded="true" />
+            <element signature="e#5585#5586#0" expanded="true" />
+            <element signature="e#5666#5667#0" expanded="true" />
+            <element signature="e#5764#5765#0" expanded="true" />
+            <element signature="e#5878#5879#0" expanded="true" />
+            <element signature="e#6996#6997#0" expanded="true" />
+            <element signature="e#7094#7095#0" expanded="true" />
+            <element signature="e#7180#7181#0" expanded="true" />
+            <element signature="e#7273#7274#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algos/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-289">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <folding>
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#662#663#0" expanded="true" />
+            <element signature="e#693#694#0" expanded="true" />
+            <element signature="e#732#733#0" expanded="true" />
+            <element signature="e#767#768#0" expanded="true" />
+            <element signature="e#807#808#0" expanded="true" />
+            <element signature="e#844#845#0" expanded="true" />
+            <element signature="e#888#889#0" expanded="true" />
+            <element signature="e#938#939#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1039#1040#0" expanded="true" />
+            <element signature="e#1100#1101#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Visualizer.java">
+    <entry file="file://$PROJECT_DIR$/src/visual/Settings.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9129">
-          <caret line="565" column="45" selection-start-line="565" selection-start-column="45" selection-end-line="565" selection-end-column="45" />
+        <state relative-caret-position="289">
+          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algos/PathFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="218" column="54" lean-forward="true" selection-start-line="218" selection-start-column="54" selection-end-line="218" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#computeGrid#0;class#Visualizer#0" />
-            <element signature="method#copyArray#0;class#Visualizer#0" />
-            <element signature="e#10648#10649#0" expanded="true" />
-            <element signature="e#10735#10736#0" expanded="true" />
-            <element signature="e#11098#11099#0" expanded="true" />
-            <element signature="e#11177#11178#0" expanded="true" />
-            <element signature="e#11278#11279#0" expanded="true" />
-            <element signature="e#11359#11360#0" expanded="true" />
-            <element signature="e#11769#11770#0" expanded="true" />
-            <element signature="e#11846#11847#0" expanded="true" />
-            <element signature="e#13399#13400#0" expanded="true" />
-            <element signature="e#13481#13482#0" expanded="true" />
-            <element signature="e#13992#13993#0" expanded="true" />
-            <element signature="e#14024#14025#0" expanded="true" />
+            <element signature="e#1689#1690#0" expanded="true" />
+            <element signature="e#1750#1751#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/visual/Visualizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1089">
+          <caret line="556" lean-forward="true" selection-start-line="556" selection-end-line="556" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3389#3584#0" expanded="true" />
+            <element signature="e#3583#3584#0" expanded="true" />
+            <element signature="e#3714#4126#0" expanded="true" />
+            <element signature="e#4125#4126#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algos/Path.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
         </state>
       </provider>
     </entry>

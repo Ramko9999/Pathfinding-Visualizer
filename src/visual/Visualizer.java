@@ -1,7 +1,14 @@
+package visual;
+
+import algos.Path;
+import algos.PathFinder;
+import controller.Controller;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.HashMap;
 import java.util.LinkedList;
+
 
 public class Visualizer extends JFrame{
 
@@ -12,7 +19,7 @@ public class Visualizer extends JFrame{
 
     //used for keyListeners and MouseListeners
     private String currentKey = "";
-    private String algoKeyResult  = "A*";
+    private String algoKeyResult  = PathFinder.STAR;
     private boolean isEndPointMoving = false;
     private TileButton movingButton;
 
@@ -26,7 +33,7 @@ public class Visualizer extends JFrame{
     public Visualizer(){
 
         //initialize a new JFrame
-        super("Visualizer");
+        super("visual.Visualizer");
         this.setSize(800,820);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         initGrid();
@@ -38,11 +45,23 @@ public class Visualizer extends JFrame{
 
     //set end points
     public void initPoints(){
-
-        repArray[sRow][sCol] = 10;
-        repArray[eRow][eCol] = 20;
-
+        repArray[sRow][sCol] = PathFinder.START;
+        repArray[eRow][eCol] = PathFinder.END;
     }
+
+    private void resetGrid(){
+        for(int i = 0; i < this.repArray.length; i++){
+            for(int j = 0; j < this.repArray[i].length; j++){
+                if(this.repArray[i][j] == PathFinder.MARKED || this.repArray[i][j] == PathFinder.CONSIDERED){
+                    this.repArray[i][j] = PathFinder.DEFAULT;
+                }
+            }
+        }
+
+        this.modifyGrid(this.repArray);
+    }
+
+
 
     //used to create the UI
     public void initUI(){
@@ -71,17 +90,18 @@ public class Visualizer extends JFrame{
                        currentKey = "E";
                        break;
                    case 'a':
-                       algoKeyResult = "A*";
+                       algoKeyResult = PathFinder.STAR;
                        runSearch.setText("Run " + algoKeyResult);
                        break;
                    case 'b':
-                       algoKeyResult = "BFS";
+                       algoKeyResult = PathFinder.BFS;
                        runSearch.setText("Run " + algoKeyResult);
                        break;
+                   case 'd':
+                       algoKeyResult = PathFinder.BIDIRECTIONAL;
+                       runSearch.setText("Run " + algoKeyResult);
                    default:
                        currentKey = "";
-
-
                }
             }
 
@@ -102,16 +122,7 @@ public class Visualizer extends JFrame{
                 new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        for(int i = 0; i < repArray.length;i ++){
-                            for(int j = 0 ; j <repArray[i].length; j++){
-
-                                //reset examined or calculated nodes
-                                if(repArray[i][j] == -5 || repArray[i][j] == 1){
-                                    repArray[i][j] = 0;
-                                }
-                            }
-                        }
-                        modifyGrid(repArray);
+                        resetGrid();
                     }
                 }
         );
@@ -120,16 +131,10 @@ public class Visualizer extends JFrame{
                 new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-
-                        //perform search
+                        resetGrid();
                         Controller c = new Controller(copyArray(repArray), sRow, sCol, eRow, eCol, algoKeyResult);
-                        LocNode finalNode = c.getPath();
-
-                        //send search results to Thread for changing colors
-                        ColorChanger colorChanger = new ColorChanger(c.requestHistory(), finalNode, gridArray, c.requestCalculations());
+                        ColorChanger colorChanger = new ColorChanger(c.getPath(), gridArray);
                         colorChanger.start();
-
-
                     }
                 }
         );
@@ -141,11 +146,11 @@ public class Visualizer extends JFrame{
         for(int i = 0; i < gridArray.length; i++){
             for(int j = 0; j <gridArray[0].length; j++){
                 if(gridArray[i][j].isClicked){
-                    repArray[i][j] = -1;
+                    repArray[i][j] = PathFinder.WALL;
                 }
                 else{
-                    if(repArray[i][j] != 20 && repArray[i][j] != 10){
-                        repArray[i][j] = 0;
+                    if(repArray[i][j] != PathFinder.END && repArray[i][j] != PathFinder.START){
+                        repArray[i][j] = PathFinder.DEFAULT;
                     }
                 }
             }
@@ -165,19 +170,19 @@ public class Visualizer extends JFrame{
     public void modifyGrid(int [][] repArray){
         for(int i = 0; i < repArray.length; i++)
             for(int j = 0; j < repArray[i].length; j++){
-                if(repArray[i][j] != -1){
+                if(repArray[i][j] != PathFinder.WALL){
 
                     //set end points to proper color
-                    if(repArray[i][j] == 10){
+                    if(repArray[i][j] == PathFinder.START){
 
-                        gridArray[i][j].setBackground(Color.orange);
+                        gridArray[i][j].setBackground(Settings.START_COLOR);
                     }
-                    else if(repArray[i][j] == 20){
+                    else if(repArray[i][j] == PathFinder.END){
 
-                        gridArray[i][j].setBackground(Color.MAGENTA);
+                        gridArray[i][j].setBackground(Settings.END_COLOR);
                     }
                     else{
-                        gridArray[i][j].setBackground(Color.white);
+                        gridArray[i][j].setBackground(Settings.BLANK_COLOR);
                         gridArray[i][j].isClicked = false;
                     }
                     gridArray[i][j].setText("");
@@ -196,18 +201,18 @@ public class Visualizer extends JFrame{
         if(isEndPointMoving && !(clickedButton.val > 0)){
 
             //fetch mouseButton and set positions of end point to new positions
-            if(movingButton.val == 10){
+            if(movingButton.val == PathFinder.START){
 
-                repArray[sRow][sCol] = 0;
-                repArray[row][col] = 10;
+                repArray[sRow][sCol] = PathFinder.DEFAULT;
+                repArray[row][col] = PathFinder.START;
                 sRow = row;
                 sCol = col;
 
             }
             else{
 
-                repArray[eRow][eCol] = 0;
-                repArray[row][col] = 20;
+                repArray[eRow][eCol] = PathFinder.DEFAULT;
+                repArray[row][col] = PathFinder.END;
                 eRow = row;
                 eCol = col;
             }
@@ -220,19 +225,15 @@ public class Visualizer extends JFrame{
 
         }else{
 
-            //set walls
-
             if(clickedButton.isClicked){
-                clickedButton.setBackground(Color.white);
+                clickedButton.setBackground(Settings.BLANK_COLOR);
                 clickedButton.setOpaque(true);
                 clickedButton.setBorderPainted(false);
             }
             else{
-                clickedButton.setBackground(Color.black);
+                clickedButton.setBackground(Settings.WALL_COLOR);
                 clickedButton.setOpaque(true);
                 clickedButton.setBorderPainted(false);
-
-                System.out.println("Clicked on a tile");
             }
             clickedButton.isClicked = !clickedButton.isClicked;
         }
@@ -247,16 +248,14 @@ public class Visualizer extends JFrame{
         //show the hover effect of the end point when the mouse comes into the tile
         if(isEndPointMoving && !(clickedButton.val > 0)){
 
-            if(movingButton.val == 10){
-                clickedButton.setBackground(Color.orange);
-                clickedButton.setOpaque(true);
-                clickedButton.setBorderPainted(false);
+            if(movingButton.val == PathFinder.START){
+                clickedButton.setBackground(Settings.START_COLOR);
             }
             else{
-                clickedButton.setBackground(Color.magenta);
-                clickedButton.setOpaque(true);
-                clickedButton.setBorderPainted(false);
+                clickedButton.setBackground(Settings.END_COLOR);
             }
+            clickedButton.setOpaque(true);
+            clickedButton.setBorderPainted(false);
 
         }
     }
@@ -266,15 +265,13 @@ public class Visualizer extends JFrame{
         //show the hover effect of the end point when the moves leaves the Tile
         if(isEndPointMoving){
             if(clickedButton.isClicked){
-                clickedButton.setBackground(Color.black);
-                clickedButton.setOpaque(true);
-                clickedButton.setBorderPainted(false);
+                clickedButton.setBackground(Settings.WALL_COLOR);
             }
             else{
-                clickedButton.setBackground(Color.white);
-                clickedButton.setOpaque(true);
-                clickedButton.setBorderPainted(false);
+                clickedButton.setBackground(Settings.BLANK_COLOR);
             }
+            clickedButton.setOpaque(true);
+            clickedButton.setBorderPainted(false);
         }
     }
 
@@ -289,11 +286,11 @@ public class Visualizer extends JFrame{
             boolean willBeAWall = false;
 
             if(currentKey.equals("C")){
-                color = Color.black;
+                color = Settings.WALL_COLOR;
                 willBeAWall = true;
             }
             else if(currentKey.equals("E")){
-                color = Color.white;
+                color = Settings.BLANK_COLOR;
 
             }
 
@@ -323,13 +320,13 @@ public class Visualizer extends JFrame{
                     gridArray[row][col].setFocusable(false);
                     gridArray[row][col].setMargin(new Insets(0, 0, 0, 0));
                     //keep walls
-                    if(repArray[row][col] == -1){
-                        gridArray[row][col].setBackground(Color.black);
+                    if(repArray[row][col] == PathFinder.WALL){
+                        gridArray[row][col].setBackground(Settings.WALL_COLOR);
                         gridArray[row][col].setOpaque(true);
                         gridArray[row][col].setBorderPainted(false);
                         gridArray[row][col].isClicked = true;
                     }
-                     //handles click of the TileButton to turn the button to a wall
+                     //handles click of the visual.TileButton to turn the button to a wall
                      gridArray[row][col].addMouseListener(new MouseListener() {
                          @Override
 
@@ -377,14 +374,14 @@ public class Visualizer extends JFrame{
                  //this is for end points
                  else{
                      if(sRow == row && sCol == col ){
-                         gridArray[i][j] = new TileButton(10);
-                         gridArray[i][j].setBackground(Color.ORANGE);
+                         gridArray[i][j] = new TileButton(PathFinder.START);
+                         gridArray[i][j].setBackground(Settings.START_COLOR);
                          gridArray[row][col].setOpaque(true);
                          gridArray[row][col].setBorderPainted(false);
                      }
                      else{
-                         gridArray[i][j] = new TileButton(20);
-                         gridArray[i][j].setBackground(Color.MAGENTA);
+                         gridArray[i][j] = new TileButton(PathFinder.END);
+                         gridArray[i][j].setBackground(Settings.END_COLOR);
                          gridArray[row][col].setOpaque(true);
                          gridArray[row][col].setBorderPainted(false);
                      }
@@ -443,7 +440,7 @@ class TileButton extends JButton{
 
     public TileButton(){
         super();
-        this.setBackground(Color.WHITE);
+        this.setBackground(Settings.BLANK_COLOR);
         this.setOpaque(true);
         this.setBorderPainted(false);
     }
@@ -451,16 +448,14 @@ class TileButton extends JButton{
     public TileButton(int v){
         super();
         this.val = v;
-        if(v == 10){
-            this.setBackground(Color.orange);
-            this.setOpaque(true);
-            this.setBorderPainted(false);
+        if(v == PathFinder.START){
+            this.setBackground(Settings.START_COLOR);
         }
         else{
-            this.setBackground(Color.magenta);
-            this.setOpaque(true);
-            this.setBorderPainted(false);
+            this.setBackground(Settings.END_COLOR);
         }
+        this.setOpaque(true);
+        this.setBorderPainted(false);
     }
 
 }
@@ -469,35 +464,32 @@ class TileButton extends JButton{
 //used to show the actual algorithm path and show calculations with a delay
 class ColorChanger extends Thread{
 
-    //actual path
-    LocNode result;
+    private Path path;
+    private TileButton [][] gridArray;
 
-    //UI Pointer
-    TileButton [][] gridArray;
 
-    //visualization DS
-    LinkedList<int [][]> history;
-    LinkedList<int [][]> calculations;
 
-    public ColorChanger(LinkedList h, LocNode r, TileButton[][] g, LinkedList<int [][]> c){
-        super();
-        result = r;
-        gridArray = g;
-        history = h;
-        calculations =c;
-
+    public ColorChanger(Path path, TileButton[][] buttons){
+        super("Color Changer");
+        this.path = path;
+        this.gridArray = buttons;
     }
+
     public void run(){
+
+        LinkedList<int[][]> history = this.path.getHistory();
+        LinkedList<int[][]> calculations = this.path.getCalculations();
 
         //show the history of the moves with a delay
         while(!history.isEmpty()){
             try{
 
                 //25 second delay
-                this.sleep(25);
+                this.sleep(Settings.HISTORY_DELAY);
 
                 //show calculated and examined nodes as well as costs
-                int [][] gridMoment = history.getLast();
+                int [][] gridMoment = history.removeLast();
+
                 processGridMoment(gridMoment);
                 if(calculations != null){
                     calculateGridMoment(history.getLast(),calculations.getLast());
@@ -507,9 +499,6 @@ class ColorChanger extends Thread{
             catch(Exception e1){
                 e1.printStackTrace();
             }
-
-            //pop node out
-            history.removeLast();
             if(calculations != null){
                 calculations.removeLast();
             }
@@ -517,21 +506,24 @@ class ColorChanger extends Thread{
         }
 
         //display no path alert
-        if(result == null){
+        if(!this.path.doesPathExist()){
             JOptionPane.showMessageDialog(null, "There is no path");
         }
         else{
 
+            LinkedList<int[]> path = this.path.getPath();
             //show actual path in different color
-            while(result != null){
+            while(path.size() > 0){
+                int [] position = path.removeFirst();
+                int x = position[0];
+                int y = position[1];
                 try{
-                    this.sleep(100);
-                    gridArray[result.row][result.col].setBackground(Color.cyan);
+                    this.sleep(Settings.PATH_DELAY);
+                    gridArray[x][y].setBackground(Settings.PATH_COLOR);
                 }
-                catch(Exception e){
+                catch(Exception e) {
                     e.printStackTrace();
                 }
-                result = result.previous;
             }
         }
 
@@ -540,17 +532,20 @@ class ColorChanger extends Thread{
     }
 
     public void processGridMoment(int [][] moment){
+        HashMap<Integer, Color> colorMap = new HashMap<>();
+        colorMap.put(PathFinder.MARKED, Settings.MARK_COLOR);
+        colorMap.put(PathFinder.CONSIDERED, Settings.CONSIDERATION_COLOR);
+        colorMap.put(PathFinder.START_MARKER, Settings.START_MARK_COLOR);
+        colorMap.put(PathFinder.END_MARKER, Settings.END_MARK_COLOR);
+        colorMap.put(PathFinder.START, Settings.START_COLOR);
+        colorMap.put(PathFinder.END, Settings.END_COLOR);
+
 
         //sets color based on whether node is examined or calculated
         for(int i =0; i < moment.length; i++){
             for(int j = 0; j < moment[i].length; j++){
-                if(moment[i][j] == -5){
-                    gridArray[i][j].setBackground(Color.RED);
-                    gridArray[i][j].setOpaque(true);
-                    gridArray[i][j].setBorderPainted(false);
-                }
-                if(moment[i][j] == 1){
-                    gridArray[i][j].setBackground(Color.green);
+                if(moment[i][j] != PathFinder.UNMARKED && moment[i][j] != PathFinder.WALL){
+                    gridArray[i][j].setBackground(colorMap.get(moment[i][j]));
                     gridArray[i][j].setOpaque(true);
                     gridArray[i][j].setBorderPainted(false);
                 }
@@ -563,13 +558,11 @@ class ColorChanger extends Thread{
         //sets cost of a node
         for(int i =0; i < moment.length; i++){
             for(int j = 0; j < moment[i].length; j++){
-                if(moment[i][j] == -5 || moment[i][j] == 1){
-                   //gridArray[i][j].setText(calcMoment[i][j] + "");
-                    gridArray[i][j].setForeground(Color.white);
+                if(moment[i][j] == PathFinder.MARKED || moment[i][j] == PathFinder.CONSIDERED){
+                    gridArray[i][j].setText(calcMoment[i][j] + "");
+                    gridArray[i][j].setForeground(Settings.BLANK_COLOR);
                     gridArray[i][j].setFont(new Font("Helvetica", Font.BOLD, 7));
-
                 }
-
             }
         }
     }
