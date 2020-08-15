@@ -6,26 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f25f589c-c3e1-4e80-a907-45f46e7d2334" name="Default Changelist" comment="Improved Code Structure">
-      <change afterPath="$PROJECT_DIR$/src/algos/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/algos/Path.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/algos/PathFinder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/visual/Settings.java" afterDir="false" />
+    <list default="true" id="f25f589c-c3e1-4e80-a907-45f46e7d2334" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/ColorChanger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Dimension.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/LocNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/MinList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/PathFinder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/TileButton.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A-Star Search/Visualizer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PathFinder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Visualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/visual/Visualizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/algos/PathFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algos/PathFinder.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,22 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/algos/Node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-289">
+            <state relative-caret-position="85">
               <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-              <folding>
-                <element signature="e#623#624#0" expanded="true" />
-                <element signature="e#662#663#0" expanded="true" />
-                <element signature="e#693#694#0" expanded="true" />
-                <element signature="e#732#733#0" expanded="true" />
-                <element signature="e#767#768#0" expanded="true" />
-                <element signature="e#807#808#0" expanded="true" />
-                <element signature="e#844#845#0" expanded="true" />
-                <element signature="e#888#889#0" expanded="true" />
-                <element signature="e#938#939#0" expanded="true" />
-                <element signature="e#986#987#0" expanded="true" />
-                <element signature="e#1039#1040#0" expanded="true" />
-                <element signature="e#1100#1101#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -65,14 +34,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/visual/Visualizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1089">
-              <caret line="556" lean-forward="true" selection-start-line="556" selection-end-line="556" />
+            <state relative-caret-position="9061">
+              <caret line="556" selection-start-line="556" selection-end-line="556" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3389#3584#0" expanded="true" />
-                <element signature="e#3583#3584#0" expanded="true" />
-                <element signature="e#3714#4126#0" expanded="true" />
-                <element signature="e#4125#4126#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -87,25 +52,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/algos/PathFinder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="651">
-              <caret line="218" column="54" lean-forward="true" selection-start-line="218" selection-start-column="54" selection-end-line="218" selection-end-column="54" />
+            <state relative-caret-position="170">
+              <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1689#1690#0" expanded="true" />
-                <element signature="e#1750#1751#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/algos/Path.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1037">
-              <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+              <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -127,7 +90,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="323">
               <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -173,10 +136,10 @@
         <option value="$PROJECT_DIR$/src/Controller.java" />
         <option value="$PROJECT_DIR$/src/Visualizer.java" />
         <option value="$PROJECT_DIR$/src/controller/Controller.java" />
-        <option value="$PROJECT_DIR$/src/algos/PathFinder.java" />
         <option value="$PROJECT_DIR$/src/visual/Settings.java" />
         <option value="$PROJECT_DIR$/src/visual/Visualizer.java" />
         <option value="$PROJECT_DIR$/src/algos/Path.java" />
+        <option value="$PROJECT_DIR$/src/algos/PathFinder.java" />
       </list>
     </option>
   </component>
@@ -389,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586879596568</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Improved Code Structure &amp; Added Bidirectional BFS.">
+      <created>1596413240222</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1596413240222</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -439,7 +409,8 @@
     <MESSAGE value="Redeployment Again" />
     <MESSAGE value="Cleaned up some code" />
     <MESSAGE value="Improved Code Structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved Code Structure" />
+    <MESSAGE value="Improved Code Structure &amp; Added Bidirectional BFS." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved Code Structure &amp; Added Bidirectional BFS." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Node.java" />
@@ -448,21 +419,9 @@
     <entry file="file://$PROJECT_DIR$/src/LocNode.java" />
     <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/Stack.java" />
     <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/LinkedList.java" />
-    <entry file="file://$PROJECT_DIR$/out/production/A-Star Search/ColorChanger.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/A-Star Search/ColorChanger.class" />
     <entry file="file://$PROJECT_DIR$/downloadable/random.txt" />
     <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.desktop/java/awt/event/MouseMotionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.desktop/java/awt/Font.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8483">
@@ -470,54 +429,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/A-Star Search.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PathFinder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1722">
-          <caret line="151" column="19" lean-forward="true" selection-start-line="151" selection-start-column="19" selection-end-line="151" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5440#5441#0" expanded="true" />
-            <element signature="e#5510#5511#0" expanded="true" />
-            <element signature="e#5585#5586#0" expanded="true" />
-            <element signature="e#5666#5667#0" expanded="true" />
-            <element signature="e#5764#5765#0" expanded="true" />
-            <element signature="e#5878#5879#0" expanded="true" />
-            <element signature="e#6996#6997#0" expanded="true" />
-            <element signature="e#7094#7095#0" expanded="true" />
-            <element signature="e#7180#7181#0" expanded="true" />
-            <element signature="e#7273#7274#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PathFinder.java" />
     <entry file="file://$PROJECT_DIR$/src/algos/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-289">
+        <state relative-caret-position="85">
           <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-          <folding>
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#662#663#0" expanded="true" />
-            <element signature="e#693#694#0" expanded="true" />
-            <element signature="e#732#733#0" expanded="true" />
-            <element signature="e#767#768#0" expanded="true" />
-            <element signature="e#807#808#0" expanded="true" />
-            <element signature="e#844#845#0" expanded="true" />
-            <element signature="e#888#889#0" expanded="true" />
-            <element signature="e#938#939#0" expanded="true" />
-            <element signature="e#986#987#0" expanded="true" />
-            <element signature="e#1039#1040#0" expanded="true" />
-            <element signature="e#1100#1101#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/visual/Visualizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
+        <state relative-caret-position="9061">
+          <caret line="556" selection-start-line="556" selection-end-line="556" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -531,36 +454,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/algos/PathFinder.java">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.desktop/java/awt/event/MouseMotionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="218" column="54" lean-forward="true" selection-start-line="218" selection-start-column="54" selection-end-line="218" selection-end-column="54" />
+        <state relative-caret-position="748">
+          <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1689#1690#0" expanded="true" />
-            <element signature="e#1750#1751#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/visual/Visualizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1089">
-          <caret line="556" lean-forward="true" selection-start-line="556" selection-end-line="556" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3389#3584#0" expanded="true" />
-            <element signature="e#3583#3584#0" expanded="true" />
-            <element signature="e#3714#4126#0" expanded="true" />
-            <element signature="e#4125#4126#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/A-Star Search.iml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/algos/Path.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1037">
-          <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+          <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algos/PathFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

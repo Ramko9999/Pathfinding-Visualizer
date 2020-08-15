@@ -48,14 +48,6 @@ public class PathFinder {
         return newArray;
     }
 
-    private void printArray(int [][] array){
-        for(int i = 0; i < array.length; i ++){
-            for(int j = 0; j < array[i].length; j++){
-                System.out.print(array[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
 
     private boolean isPositionInGrid(int x, int y, int m, int n){
         return (x > -1 && x < m) && (y > -1 && y < n);
@@ -195,9 +187,6 @@ public class PathFinder {
             int endNodeRow = endNode.getRow();
             int endNodeCol = endNode.getCol();
 
-
-            printArray(board);
-            System.out.println("--------------------");
             history.addFirst(copyArray(board));
 
             int[][] positions = {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
