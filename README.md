@@ -26,10 +26,12 @@ A* search
 ![a-star-search](https://user-images.githubusercontent.com/41026856/64916561-0cdc7300-d745-11e9-8489-3683d92c8ed0.gif)
 
 
-BFS
+Breadth First Search
 
 ![bfs](https://user-images.githubusercontent.com/41026856/64916569-43b28900-d745-11e9-8e51-afe70b7e5498.gif)
 
+Bidirectional Breadth First Search
 
+![bidirectional-bfs](https://media.giphy.com/media/U6GuVGBOQoHUHaZ7LV/giphy.gif)
 
 
