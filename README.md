@@ -1,7 +1,7 @@
 # PathFindingVisualizer 
 ## Pathfinding
 
-Pathfinding is used in many different cases, ranging from Transportation (Uber) and Directions (Google Maps) to sending files through a network efficently. I aimed to create a program that will allow the user to see what is going on behind the scenes during the algorithm. I implemented A* search, Breadth First Search and Bidirectional Breadth First Search as my algorithms. I hope more people will be able to appreciate graph theory through this project.
+Pathfinding is used in many different cases, ranging from transportation (Uber) and map directions (Google Maps) to sending files through a network efficently. I aimed to create a program that will allow the user to see what is going on behind the scenes during the algorithms. I implemented A* search, Breadth First Search and Bidirectional Breadth First Search. I hope more people will be able to appreciate graph theory through this project.
 
 ## Controls
 
@@ -17,7 +17,7 @@ Clicking on the Start and End points will allow you to change them to different 
 
 ![End Point Moving](https://user-images.githubusercontent.com/41026856/64916557-f1716800-d744-11e9-96b8-39a45086141f.gif)
 
-Clicking A will set the algorithm to A* and Clicking B will set the algorithm to BFS
+Clicking A will set the algorithm to A*, clicking B will set the algorithm to BFS, and clicking D will set the algorithm to Bidirectional BFS.
 
 ## Demos
 
