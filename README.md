@@ -1,7 +1,7 @@
 # PathFindingVisualizer 
 ## Pathfinding
 
-Pathfinding is used in many different cases, ranging from Transportation (Uber) and Directions (Google Maps) to sending files through a network efficently. We aimed to create a program that will allow the user to see what is going on behind the scenes during the actual pathfinding. We implemented A* search and Breadth First Search as our main algorithms. 
+Pathfinding is used in many different cases, ranging from Transportation (Uber) and Directions (Google Maps) to sending files through a network efficently. I aimed to create a program that will allow the user to see what is going on behind the scenes during the algorithm. I implemented A* search, Breadth First Search and Bidirectional Breadth First Search as my algorithms. I hope more people will be able to appreciate graph theory through this project.
 
 ## Controls
 
